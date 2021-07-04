@@ -27,7 +27,6 @@ R.events.on('routeChangeError', () => {
 
 function MyApp({ Component, pageProps, translation }) {
   const router = useRouter();
-  console.log(translation);
 
   return (
     <>

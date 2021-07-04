@@ -6,9 +6,6 @@ import {
   Geography,
 } from 'react-simple-maps';
 
-const geoUrl =
-  'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json';
-
 const rounded = (num) => {
   if (num > 1000000000) {
     return Math.round(num / 100000000) / 10 + 'Bn';
@@ -19,12 +16,25 @@ const rounded = (num) => {
   }
 };
 
-const MapChart = ({ setTooltipContent }) => {
+const MapChart = ({ setTooltipContent, map }) => {
+  const mapWidth = 800;
+  const mapHeight = 600;
+
   return (
     <>
-      <ComposableMap data-tip="" projectionConfig={{ scale: 200 }}>
-        <ZoomableGroup>
-          <Geographies geography={geoUrl}>
+      <ComposableMap
+        data-tip=""
+        width={mapWidth}
+        height={mapHeight}
+        projectionConfig={{ scale: 160 }}
+      >
+        <ZoomableGroup
+          translateExtent={[
+            [0, 0],
+            [mapWidth, mapHeight],
+          ]}
+        >
+          <Geographies geography={map}>
             {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
