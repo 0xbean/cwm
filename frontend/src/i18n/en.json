@@ -1,0 +1,35 @@
+{
+  "header": {
+    "nav": {
+      "about": {
+        "name": "About",
+        "childMenus": {}
+      },
+      "ministries": {
+        "name": "Ministries",
+        "childMenus": {
+          "suppMission": "Supported Missionaries",
+          "suppOrg": "Supported Organizations",
+          "shortTermMission": "Short Term Missions",
+          "careNet": "CareNet"
+        }
+      },
+      "resources": {
+        "name": "Resources",
+        "childMenus": {
+          "seminars": "Seminars",
+          "perspectives": "Perspectives",
+          "shortTermMission": "Short Term Missions",
+          "seniorMissions": "Senior Missions Training"
+        }
+      }
+    },
+    "title": "Center for World Missions"
+  },
+  "footer": {
+    "title": "CONTACT US",
+    "email": "",
+    "phone": "",
+    "address": ""
+  }
+}
