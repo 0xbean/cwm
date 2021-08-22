@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+These are the imports for the main fonts in all of the application that use the serif font.
+*/
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 900;
+  font-style: normal;
+  src: url('/EBGaramond-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 900;
+  font-style: italic;
+  src: url('/EBGaramond-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/EBGaramond-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 700;
+  font-style: italic;
+  src: url('/EBGaramond-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/EBGaramond-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 500;
+  font-style: italic;
+  src: url('/EBGaramond-SemiBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/EBGaramond-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 400;
+  font-style: italic;
+  src: url('/EBGaramond-MediumItalic.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/EBGaramond-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'EBGaramond';
+  font-weight: 300;
+  font-style: italic;
+  src: url('/EBGaramond-Italic.ttf');
+}
+
+/*
+These are the main fonts in the application that use the korean serif font.
+*/
+
+@font-face {
+  font-family: 'Korean-EBGaramond';
+  font-weight: 900;
+  font-style: normal;
+  src: url('/NanumMeyeongjo-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'Korean-EBGaramond';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/NanumMeyeongjo-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Korean-EBGaramond';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/NanumMeyeongjo-Regular.ttf');
+}
+
+/*
+These are the main fonts in the application that use the sans serif font
+*/
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 900;
+  font-style: normal;
+  src: url('/OpenSans-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 900;
+  font-style: italic;
+  src: url('/OpenSans-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/OpenSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 700;
+  font-style: italic;
+  src: url('/OpenSans-BoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 500;
+  font-style: italic;
+  src: url('/OpenSans-SemiBoldItalic.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/EBGaramond-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 300;
+  font-style: italic;
+  src: url('/EBGaramond-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 200;
+  font-style: normal;
+  src: url('/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-weight: 200;
+  font-style: italic;
+  src: url('/OpenSans-LightItalic.ttf');
+}
+
+/*
+These are the main fonts in the application that use the korean sans serif font
+*/
+
+@font-face {
+  font-family: 'Korean-OpenSans';
+  font-weight: 900;
+  font-style: normal;
+  src: url('/GothicA1-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'Korean-OpenSans';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/GothicA1-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Korean-OpenSans';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/GothicA1-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Korean-OpenSans';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/GothicA1-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Korean-OpenSans';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/GothicA1-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Korean-OpenSans';
+  font-weight: 200;
+  font-style: normal;
+  src: url('/GothicA1-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Korean-OpenSans';
+  font-weight: 100;
+  font-style: normal;
+  src: url('/GothicA1-ExtraLight.ttf');
+}

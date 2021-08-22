@@ -18,7 +18,11 @@ const rounded = (num) => {
 
 const MapChart = ({ setTooltipContent, map }) => {
   const mapWidth = 800;
-  const mapHeight = 600;
+  const mapHeight = 420;
+
+  const handleFilter = ({ constructor: { name } }) => {
+    return name !== 'WheelEvent' && name != 'MouseEvent';
+  };
 
   return (
     <>
@@ -28,12 +32,7 @@ const MapChart = ({ setTooltipContent, map }) => {
         height={mapHeight}
         projectionConfig={{ scale: 160 }}
       >
-        <ZoomableGroup
-          translateExtent={[
-            [0, 0],
-            [mapWidth, mapHeight],
-          ]}
-        >
+        <ZoomableGroup filterZoomEvent={handleFilter}>
           <Geographies geography={map}>
             {({ geographies }) =>
               geographies.map((geo) => (
@@ -49,11 +48,11 @@ const MapChart = ({ setTooltipContent, map }) => {
                   }}
                   style={{
                     default: {
-                      fill: '#D6D6DA',
+                      fill: '#3B5284',
                       outline: 'none',
                     },
                     hover: {
-                      fill: '#F53',
+                      fill: '#7686a9',
                       outline: 'none',
                     },
                     pressed: {

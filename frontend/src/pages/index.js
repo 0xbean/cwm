@@ -3,12 +3,13 @@ import { getRequest } from '../../tools/api';
 import { useState } from 'react';
 import fs from 'fs';
 
-export default function IndexPage({ content, map }) {
+export default function IndexPage({ content, map, sansFont, serifFont }) {
   const [tooltipContent, setToolTipContent] = useState('');
   const pageContent = content[0];
+
   return (
     <>
-      <div className="flex h-3/4 w-full place-items-center flex-col">
+      <div className="flex h-2/3 w-full place-items-center flex-col">
         <MapChart setTooltipContent={setToolTipContent} map={map} />
       </div>
     </>
@@ -18,9 +19,8 @@ export default function IndexPage({ content, map }) {
 export async function getServerSideProps(ctx) {
   let url = `http://localhost:1337/indices/`;
   if (ctx) {
-    const { locale } = ctx;
-    if (locale) {
-      url += `?_locale=${locale}`;
+    if (ctx.locale) {
+      url += `?_locale=${ctx.locale}`;
     }
   }
 

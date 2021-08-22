@@ -1,0 +1,1 @@
+D\:/MariaDB\ 10.6/bin//mariadbd.exe
