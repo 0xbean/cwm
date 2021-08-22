@@ -18,7 +18,7 @@ const rounded = (num) => {
 
 const MapChart = ({ setTooltipContent, map }) => {
   const mapWidth = 800;
-  const mapHeight = 420;
+  const mapHeight = 600;
 
   const handleFilter = ({ constructor: { name } }) => {
     return name !== 'WheelEvent' && name != 'MouseEvent';
@@ -56,7 +56,7 @@ const MapChart = ({ setTooltipContent, map }) => {
                       outline: 'none',
                     },
                     pressed: {
-                      fill: '#E42',
+                      fill: '#2f426a',
                       outline: 'none',
                     },
                   }}

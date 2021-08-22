@@ -227,3 +227,9 @@ These are the main fonts in the application that use the korean sans serif font
   font-style: normal;
   src: url('/GothicA1-ExtraLight.ttf');
 }
+
+.hidden-link {
+  display: none;
+  height: 0;
+  width: 0;
+}
