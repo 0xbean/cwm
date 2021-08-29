@@ -25,7 +25,7 @@ export async function getServerSideProps(ctx) {
   }
 
   const content = await getRequest(url);
-  const file = fs.readFileSync('./public/world-110m.json');
+  const file = fs.readFileSync('./public/miscellaneous/world-110m.json');
   const map = JSON.parse(file);
   return {
     props: {

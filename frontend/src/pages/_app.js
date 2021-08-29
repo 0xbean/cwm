@@ -8,8 +8,7 @@ import Header from '../components/header';
 import Hero from '../components/hero';
 import Footer from '../components/footer';
 
-import '../../styles/globals.css';
-import 'tailwindcss/tailwind.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // This is where we configure the loading bar at the top of the screen when we're moving to the next page.
 NProgress.configure({ showSpinner: false });
@@ -39,7 +38,7 @@ function MyApp({ Component, pageProps, translation, locale }) {
   return (
     <>
       <Header />
-      <div className="mx-auto box-border flex h-screen w-screen flex-col place-items-center">
+      <div className="container mx-auto box-border flex flex-col place-items-center">
         <Hero
           router={router}
           content={translation.header}

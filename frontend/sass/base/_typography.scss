@@ -1,0 +1,232 @@
+@include font(
+  'Oswald',
+  url('#{$oswald-font-path}/Oswald-ExtraLight.ttf'),
+  200,
+  'normal'
+);
+
+/*
+These are the imports for the main fonts in all of the application that use the serif font.
+*/
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-ExtraBold.ttf'),
+  900,
+  'normal'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-ExtraBoldItalic.ttf'),
+  900,
+  'italic'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-Bold.ttf'),
+  700,
+  'normal'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-BoldItalic.ttf'),
+  700,
+  'italic'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-SemiBold.ttf'),
+  500,
+  'normal'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-SemiBoldItalic.ttf'),
+  500,
+  'italic'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-Medium.ttf'),
+  400,
+  'normal'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-MediumItalic.ttf'),
+  400,
+  'italic'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-Regular.ttf'),
+  300,
+  'normal'
+);
+
+@include font(
+  'EBGaramond',
+  url('#{$eb-garamond-font-path}/EBGaramond-Italic.ttf'),
+  300,
+  'italic'
+);
+
+/*
+These are the main fonts in the application that use the korean serif font.
+*/
+
+@include font(
+  'Korean-EBGaramond',
+  url('#{$nanum-myeongjo-font-path}/NanumMeyeongjo-ExtraBold.ttf'),
+  900,
+  'normal'
+);
+
+@include font(
+  'Korean-EBGaramond',
+  url('#{$nanum-myeongjo-font-path}/NanumMeyeongjo-Bold.ttf'),
+  700,
+  'normal'
+);
+
+@include font(
+  'Korean-EBGaramond',
+  url('#{$nanum-myeongjo-font-path}/NanumMeyeongjo-Regular.ttf'),
+  300,
+  'normal'
+);
+
+/*
+These are the main fonts in the application that use the sans serif font
+*/
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-ExtraBold.ttf'),
+  900,
+  'normal'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-ExtraBoldItalic.ttf'),
+  900,
+  'italic'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-Bold.ttf'),
+  700,
+  'normal'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-BoldItalic.ttf'),
+  700,
+  'italic'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-SemiBold.ttf'),
+  500,
+  'normal'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-SemiBoldItalic.ttf'),
+  500,
+  'italic'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-Regular.ttf'),
+  300,
+  'normal'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-Italic.ttf'),
+  300,
+  'italic'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-Light.ttf'),
+  200,
+  'normal'
+);
+
+@include font(
+  'OpenSans',
+  url('#{$opensans-font-path}/OpenSans-LightItalic.ttf'),
+  200,
+  'italic'
+);
+
+/*
+These are the main fonts in the application that use the korean sans serif font
+*/
+
+@include font(
+  'Korean-OpenSans',
+  url('#{$gothic-font-path}/GothicA1-ExtraBold.ttf'),
+  900,
+  'normal'
+);
+
+@include font(
+  'Korean-OpenSans',
+  url('#{$gothic-font-path}/GothicA1-Bold.ttf'),
+  700,
+  'normal'
+);
+
+@include font(
+  'Korean-OpenSans',
+  url('#{$gothic-font-path}/GothicA1-SemiBold.ttf'),
+  500,
+  'normal'
+);
+
+@include font(
+  'Korean-OpenSans',
+  url('#{$gothic-font-path}/GothicA1-Medium.ttf'),
+  400,
+  'normal'
+);
+
+@include font(
+  'Korean-OpenSans',
+  url('#{$gothic-font-path}/GothicA1-Regular.ttf'),
+  300,
+  'normal'
+);
+
+@include font(
+  'Korean-OpenSans',
+  url('#{$gothic-font-path}/GothicA1-Light.ttf'),
+  200,
+  'normal'
+);
+
+@include font(
+  'Korean-OpenSans',
+  url('#{$gothic-font-path}/GothicA1-ExtraLight.ttf'),
+  100,
+  'normal'
+);

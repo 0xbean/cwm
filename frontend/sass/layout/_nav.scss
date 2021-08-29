@@ -1,0 +1,129 @@
+.nav {
+  color: $color-white;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding-top: 5vh;
+  width: 100%;
+  &__icon {
+    font-size: 2.5rem;
+    @include respond(tab-land) {
+      font-size: 2.25rem;
+    }
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
+    &-link {
+      color: $color-white;
+      transition: all 0.4s;
+      &:link,
+      &:visited {
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      &:hover,
+      &:active {
+        color: $color-white;
+        text-decoration: none;
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__item {
+    &-header {
+      font-size: 2.5rem;
+      @include respond(tab-land) {
+        font-size: 2.25rem;
+      }
+      @include respond(tab-port) {
+        font-size: 2rem;
+      }
+
+      &--logo {
+        cursor: pointer;
+        width: 100%;
+        margin-left: 3rem;
+      }
+
+      &-link {
+        position: relative;
+        text-decoration: none;
+
+        @include respond(phone) {
+          font-size: 5rem;
+          color: $color-black;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 4px;
+          bottom: 0;
+          left: 0;
+          background-color: #fff;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+
+          @include respond(phone) {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 4px;
+            bottom: 0;
+            left: 0;
+            background-color: $color-black;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+
+        &:link,
+        &:visited {
+          color: $color-white;
+
+          @include respond(phone) {
+            font-size: 5rem;
+            color: $color-black;
+          }
+        }
+        &:hover,
+        &:active {
+          text-decoration: none;
+          &::before {
+            visibility: visible;
+            width: 100%;
+          }
+          color: $color-white;
+
+          @include respond(phone) {
+            font-size: 5rem;
+            color: $color-black;
+          }
+        }
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style-type: none;
+      width: 75%;
+    }
+  }
+
+  @include respond(phone) {
+    display: none;
+  }
+}

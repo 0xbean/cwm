@@ -25,7 +25,7 @@ const TranslationSlider = (props) => {
   });
 
   return (
-    <div className="absolute top-10 right-10 flex items-center justify-center ">
+    <div className="col-md-3">
       <div className="flex items-center justify-center w-full mb-12">
         <label
           htmlFor="translation-toggle"

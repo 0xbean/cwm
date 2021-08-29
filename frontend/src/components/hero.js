@@ -34,10 +34,14 @@ const Hero = (props) => {
   const resourcesVisible = resources ? 'visible' : 'hidden';
 
   return (
-    <>
-      <img src="/bethel-cwm-logo.png" className="w-60 select-none" />
-
-      <TranslationSlider router={router} />
+    <div className="container col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div className="col-md-12 row">
+        <img
+          src="/images/bethel-cwm-logo.png"
+          className="mx-auto d-block col-md-3"
+        />
+        <TranslationSlider router={router} />
+      </div>
 
       <div
         className="flex grid place-items-center mt-4 grid-cols-3 w-1/3"
@@ -131,7 +135,7 @@ const Hero = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
