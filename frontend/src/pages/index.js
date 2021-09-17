@@ -3,25 +3,25 @@ import { getRequest } from '../../tools/api';
 import { useState } from 'react';
 import fs from 'fs';
 
-export default function IndexPage({ content, map, sansFont, serifFont }) {
-  const [tooltipContent, setToolTipContent] = useState('');
-  const pageContent = content[0];
-
+export default function IndexPage(props) {
+  const { content, map, sansFont, serifFont } = props;
   return (
     <>
       <div className="flex h-2/3 w-full place-items-center flex-col">
-        <MapChart setTooltipContent={setToolTipContent} map={map} />
+        <MapChart content={content} map={map} />
       </div>
     </>
   );
 }
 
 export async function getServerSideProps(ctx) {
-  let url = `http://localhost:1337/indices/`;
+  let url = `http://localhost:1337/missionaries`;
   if (ctx) {
     if (ctx.locale) {
       url += `?_locale=${ctx.locale}`;
     }
+  } else {
+    url += `?_locale=en`;
   }
 
   const content = await getRequest(url);

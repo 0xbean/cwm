@@ -1,0 +1,375 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout > page layout > components
+
+1em = 16px
+*/
+html {
+  font-size: 62.5%; }
+  @media only screen and (min-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (min-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  background-color: #f8f8f8;
+  min-width: 37.5em; }
+  @media only screen and (min-width: 56.25em) {
+    body {
+      padding: 0; } }
+
+body:lang(en) {
+  font-family: 'OpenSans', Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal; }
+
+body:lang(ko-KR) {
+  font-family: 'Korean-OpenSans', Verdana, sans-serif;
+  font-weight: 500;
+  font-style: normal; }
+
+#nprogress .bar {
+  background: #3b5284 !important; }
+
+.hidden-link {
+  display: none; }
+
+/*
+These are the imports for the main fonts in all of the application that use the serif font.
+*/
+@font-face {
+  font-family: "EBGaramond";
+  src: url("fonts/eb-garamond/EBGaramond-ExtraBold.ttf");
+  font-weight: 900;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "EBGaramond";
+  src: url("fonts/eb-garamond/EBGaramond-Bold.ttf");
+  font-weight: 700;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "EBGaramond";
+  src: url("fonts/eb-garamond/EBGaramond-SemiBold.ttf");
+  font-weight: 500;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "EBGaramond";
+  src: url("fonts/eb-garamond/EBGaramond-Medium.ttf");
+  font-weight: 400;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "EBGaramond";
+  src: url("fonts/eb-garamond/EBGaramond-Regular.ttf");
+  font-weight: 300;
+  font-style: "normal";
+  font-display: swap; }
+
+/*
+These are the main fonts in the application that use the korean serif font.
+*/
+@font-face {
+  font-family: "Korean-EBGaramond";
+  src: url("fonts/nanum-myeongjo/NanumMyeongjo-ExtraBold.ttf");
+  font-weight: 900;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "Korean-EBGaramond";
+  src: url("fonts/nanum-myeongjo/NanumMyeongjo-Bold.ttf");
+  font-weight: 700;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "Korean-EBGaramond";
+  src: url("fonts/nanum-myeongjo/NanumMyeongjo-Regular.ttf");
+  font-weight: 300;
+  font-style: "normal";
+  font-display: swap; }
+
+/*
+These are the main fonts in the application that use the sans serif font
+*/
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/opensans/OpenSans-ExtraBold.ttf");
+  font-weight: 900;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/opensans/OpenSans-Bold.ttf");
+  font-weight: 700;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/opensans/OpenSans-SemiBold.ttf");
+  font-weight: 500;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/opensans/OpenSans-Regular.ttf");
+  font-weight: 300;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/opensans/OpenSans-Light.ttf");
+  font-weight: 200;
+  font-style: "normal";
+  font-display: swap; }
+
+/*
+These are the main fonts in the application that use the korean sans serif font
+*/
+@font-face {
+  font-family: "Korean-OpenSans";
+  src: url("fonts/gothic/GothicA1-ExtraBold.ttf");
+  font-weight: 900;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "Korean-OpenSans";
+  src: url("fonts/gothic/GothicA1-Bold.ttf");
+  font-weight: 700;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "Korean-OpenSans";
+  src: url("fonts/gothic/GothicA1-SemiBold.ttf");
+  font-weight: 500;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "Korean-OpenSans";
+  src: url("fonts/gothic/GothicA1-Medium.ttf");
+  font-weight: 400;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "Korean-OpenSans";
+  src: url("fonts/gothic/GothicA1-Regular.ttf");
+  font-weight: 300;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "Korean-OpenSans";
+  src: url("fonts/gothic/GothicA1-Light.ttf");
+  font-weight: 200;
+  font-style: "normal";
+  font-display: swap; }
+
+@font-face {
+  font-family: "Korean-OpenSans";
+  src: url("fonts/gothic/GothicA1-ExtraLight.ttf");
+  font-weight: 100;
+  font-style: "normal";
+  font-display: swap; }
+
+.nav-link {
+  font-family: 'EBGaramond', Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: black !important; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+  @media only screen and (min-width: 56.25em) {
+    .u-margin-bottom-medium {
+      margin-bottom: 3rem !important; } }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+  @media only screen and (min-width: 56.25em) {
+    .u-margin-bottom-big {
+      margin-bottom: 5rem !important; } }
+
+.u-margin-bottom-huge {
+  margin-bottom: 10rem !important; }
+
+.u-margin-bottom-massive {
+  margin-bottom: 13rem !important; }
+
+.u-margin-top-small {
+  margin-top: 1.5rem !important; }
+
+.u-margin-top-big {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
+.u-margin-left-medium {
+  margin-left: 4rem !important; }
+
+.u-padding-left-small {
+  padding-left: 1.5rem !important; }
+
+.u-padding-left-medium {
+  padding-left: 4rem !important; }
+
+.u-padding-bottom-small {
+  padding-bottom: 1.5rem !important; }
+
+.u-padding-bottom-medium {
+  padding-bottom: 4rem !important; }
+
+.u-padding-right-small {
+  padding-right: 1.5rem !important; }
+
+.u-padding-right-medium {
+  padding-right: 4rem !important; }
+
+.translation-slider__container {
+  display: flex;
+  align-items: center;
+  flex-direction: row; }
+  .translation-slider__container-label {
+    width: max-content;
+    text-align: center;
+    padding: 0.5rem;
+    white-space: nowrap; }
+
+nav {
+  font-size: 1.2rem; }
+
+.nav-item {
+  width: max-content;
+  white-space: nowrap; }
+
+.nav-link {
+  width: max-content;
+  white-space: nowrap; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: auto;
+  height: 10rem; }
+  .footer__img {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    user-select: none; }
+    @media only screen and (min-width: 23.4375em) {
+      .footer__img {
+        width: 30%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        user-select: none; } }
+    @media only screen and (min-width: 37.5em) {
+      .footer__img {
+        width: 19%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        user-select: none; } }
+    @media only screen and (min-width: 56.25em) {
+      .footer__img {
+        width: 13%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        user-select: none; } }
+    @media only screen and (min-width: 75em) {
+      .footer__img {
+        width: 10%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        user-select: none; } }
+    @media only screen and (min-width: 93.75em) {
+      .footer__img {
+        width: 10%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        user-select: none; } }
+    @media only screen and (min-width: 112.5em) {
+      .footer__img {
+        width: 8%;
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        user-select: none; } }
+  .footer__contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #3f3f3f;
+    height: 10rem; }
+    .footer__contact-text {
+      color: #f8f8f8; }
+
+.hero__image {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  transition: height 0.66s ease-in-out; }
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; }

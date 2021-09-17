@@ -2,32 +2,32 @@
   "header": {
     "nav": {
       "about": {
-        "name": "CWM 소개",
+        "name": "소개",
         "childMenus": {}
       },
       "ministries": {
-        "name": "테스트",
+        "name": "사역",
         "childMenus": {
-          "suppMission": "테스트",
-          "suppOrg": "테스트",
-          "shortTermMission": "테스트",
-          "careNet": "테스트"
+          "suppMission": "선교사 후원",
+          "suppOrg": "선교단체 후원",
+          "shortTermMission": "단기선교 사역",
+          "careNet": "사랑방 선교사"
         }
       },
       "resources": {
-        "name": "테스트",
+        "name": "자료",
         "childMenus": {
-          "seminars": "테스트",
-          "perspectives": "테스트",
-          "shortTermMission": "테스트",
-          "seniorMissions": "테스트"
+          "seminars": "세미나",
+          "perspectives": "미션 퍼스펙트브스",
+          "shortTermMission": "해외 단기 선교 ",
+          "seniorMissions": "시니어 선교 훈련"
         }
       }
     },
-    "title": "벧엘교회 세계 선교센터"
+    "title": "세계 선교 센터"
   },
   "footer": {
-    "title": "CONTACT US",
+    "title": "연락처",
     "email": "",
     "phone": "",
     "address": ""

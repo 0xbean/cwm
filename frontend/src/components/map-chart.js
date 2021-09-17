@@ -4,19 +4,11 @@ import {
   ComposableMap,
   Geographies,
   Geography,
+  Marker,
 } from 'react-simple-maps';
 
-const rounded = (num) => {
-  if (num > 1000000000) {
-    return Math.round(num / 100000000) / 10 + 'Bn';
-  } else if (num > 1000000) {
-    return Math.round(num / 100000) / 10 + 'M';
-  } else {
-    return Math.round(num / 100) / 10 + 'K';
-  }
-};
-
-const MapChart = ({ setTooltipContent, map }) => {
+const MapChart = (props) => {
+  const { content, map } = props;
   const mapWidth = 800;
   const mapHeight = 600;
 
@@ -39,13 +31,6 @@ const MapChart = ({ setTooltipContent, map }) => {
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
-                  onMouseEnter={() => {
-                    const { NAME, POP_EST } = geo.properties;
-                    setTooltipContent(`${NAME} — ${rounded(POP_EST)}`);
-                  }}
-                  onMouseLeave={() => {
-                    setTooltipContent('');
-                  }}
                   style={{
                     default: {
                       fill: '#3B5284',
@@ -64,6 +49,23 @@ const MapChart = ({ setTooltipContent, map }) => {
               ))
             }
           </Geographies>
+          {content.map((missionary, idx) => (
+            <Marker
+              coordinates={[missionary.geocode.lng, missionary.geocode.lat]}
+              key={idx}
+            >
+              <circle
+                r={3}
+                fill="#282828"
+                style={{
+                  pressed: {
+                    fill: '#2f426a',
+                    outline: 'none',
+                  },
+                }}
+              />
+            </Marker>
+          ))}
         </ZoomableGroup>
       </ComposableMap>
     </>

@@ -1,14 +1,16 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import { Router as R } from 'next/dist/client/router';
 import App from 'next/app';
-import React from 'react';
 
 import Header from '../components/header';
 import Hero from '../components/hero';
 import Footer from '../components/footer';
 
+import 'nprogress/nprogress.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../../public/css/styles.css';
 
 // This is where we configure the loading bar at the top of the screen when we're moving to the next page.
 NProgress.configure({ showSpinner: false });
@@ -26,27 +28,65 @@ R.events.on('routeChangeError', () => {
   NProgress.done();
 });
 
-function MyApp({ Component, pageProps, translation, locale }) {
-  const router = useRouter();
-  const sansFont = locale ? 'sans' : locale === 'en' ? 'sans' : 'Korean-sans';
-  const serifFont = locale
-    ? 'serif'
-    : locale === 'en'
-    ? 'serif'
-    : 'Korean-serif';
+function heroImage(pathname) {
+  let image = '';
+  const params = pathname.split('/');
+  let path = `/${params[1]}`;
+  switch (path) {
+    case '/':
+      break;
+    case '/about':
+      image = '/images/about.png';
+      break;
+    case '/ministries':
+      switch (`${params[2]}`) {
+        case 'care-net':
+          image = '/images/care-net.png';
+          break;
+        case 'short-term':
+          image = '/images/stm.png';
+          break;
+        case 'supp-mission':
+          image = '/images/supported-missionaries.png';
+          break;
+        case 'supp-org':
+          image = '/images/supported-organizations.png';
+          break;
+      }
+      break;
+    case '/resources':
+      switch (`${params[2]}`) {
+        case 'perspectives':
+          image = '/images/perspectives.png';
+          break;
+        case 'seminars':
+          image = '/images/seminars.png';
+          break;
+        case 'senior-missions':
+          image = '/images/senior-missions-training.png';
+          break;
+        case 'short-term':
+          image = '/images/stm-training.png';
+          break;
+      }
+      break;
+    default:
+      break;
+  }
 
+  return image;
+}
+
+function MyApp({ Component, pageProps, translation }) {
+  const router = useRouter();
+  const image = heroImage(router.pathname);
   return (
     <>
       <Header />
-      <div className="container mx-auto box-border flex flex-col place-items-center">
-        <Hero
-          router={router}
-          content={translation.header}
-          sansFont={sansFont}
-          serifFont={serifFont}
-        />
-        <Component sansFont={sansFont} serifFont={serifFont} {...pageProps} />
-        <Footer />
+      <div className="mx-auto app">
+        <Hero router={router} image={image} content={translation.header} />
+        <Component {...pageProps} />
+        <Footer content={translation.footer} />
       </div>
     </>
   );
@@ -56,8 +96,7 @@ MyApp.getInitialProps = async (appContext) => {
   const translation = (await import(`../i18n/${appContext.router.locale}.json`))
     .default;
   const appProps = await App.getInitialProps(appContext);
-  const locale = appContext.router.locale;
-  return { translation, locale, ...appProps };
+  return { translation, ...appProps };
 };
 
 export default MyApp;

@@ -5,14 +5,13 @@
   "scripts": {
     "pm2": "pm2 start processes.json --no-daemon",
     "dev": "concurrently \"npm run compile:sass\" \"next dev\"",
-    "compile:sass": "node-sass sass/main.scss public/static/css/styles.css -w",
-    "build:sass": "node-sass sass/main.scss public/static/css/styles.css",
+    "compile:sass": "node-sass sass/main.scss public/css/styles.css -w",
+    "build:sass": "node-sass sass/main.scss public/css/styles.css",
     "build": "npm run build:sass && next build",
     "start": "next start"
   },
   "dependencies": {
-    "@popperjs/core": "^2.9.3",
-    "bootstrap": "^5.0.0-beta3",
+    "bootstrap": "^5.1.0",
     "concurrently": "^6.2.1",
     "isomorphic-fetch": "^3.0.0",
     "mysql2": "^2.2.5",
@@ -21,6 +20,7 @@
     "nprogress": "^0.2.0",
     "pm2": "^4.5.5",
     "react": "17.0.1",
+    "react-bootstrap": "^2.0.0-beta.6",
     "react-dom": "17.0.1",
     "react-simple-maps": "^2.3.0"
   }

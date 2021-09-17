@@ -1,15 +1,14 @@
-const Footer = () => {
+const Footer = (props) => {
+  const { content } = props;
+
   return (
-    <>
-      <img
-        src="/images/bethel-cwm-logo-small.png"
-        className="w-24 fixed bottom-3 left-3 z-10 select-none"
-      />
-      <div className="h-28 bg-theme-black-light w-screen flex items-center justify-center flex-col fixed bottom-0 left-0">
-        <p className="text-theme-white">CONTACT US</p>
-        <p className="text-theme-white">EMAIL | PHONE | ADDRESS</p>
+    <div className="footer col-md-12 col-sm-12 col-lg-12 row">
+      <img src="/images/bethel-cwm-logo-small.png" className="footer__img" />
+      <div className="footer__contact">
+        <p className="footer__contact-text">{content.title}</p>
+        <p className="footer__contact-text">EMAIL | PHONE | ADDRESS</p>
       </div>
-    </>
+    </div>
   );
 };
 

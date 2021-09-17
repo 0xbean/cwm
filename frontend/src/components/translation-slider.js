@@ -25,37 +25,32 @@ const TranslationSlider = (props) => {
   });
 
   return (
-    <div className="col-md-3">
-      <div className="flex items-center justify-center w-full mb-12">
-        <label
-          htmlFor="translation-toggle"
-          className="flex items-center cursor-pointer"
+    <div className="translation-slider__container">
+      <label
+        className="form-check-label translation-slider__container-label"
+        htmlFor="translation-toggle"
+      >
+        English
+      </label>
+      <div className="form-check form-switch">
+        <input
+          className="form-check-input"
+          type="checkbox"
+          id="translation-toggle"
+        />
+        <Link
+          href={router.asPath}
+          locale={router.locale === 'en' ? 'ko-KR' : 'en'}
         >
-          <div className="mr-3 text-gray-700 font-medium select-none">
-            English
-          </div>
-          <div className="relative">
-            <input
-              id="translation-toggle"
-              type="checkbox"
-              className="sr-only"
-            />
-
-            <Link
-              href={router.asPath}
-              locale={router.locale === 'en' ? 'ko-KR' : 'en'}
-            >
-              <a className="hidden-link">hidden locale link</a>
-            </Link>
-
-            <div className="w-10 h-4 bg-theme-teal bg-opacity-25 rounded-full shadow-inner"></div>
-            <div className="dot absolute w-6 h-6 bg-theme-teal rounded-full shadow -left-1 -top-1 transition"></div>
-          </div>
-          <div className="ml-3 text-gray-700 font-medium select-none">
-            한국어
-          </div>
-        </label>
+          <a className="hidden-link">hidden locale link</a>
+        </Link>
       </div>
+      <label
+        className="form-check-label translation-slider__container-label"
+        htmlFor="translation-toggle"
+      >
+        한국어
+      </label>
     </div>
   );
 };

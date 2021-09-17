@@ -1,0 +1,8 @@
+.hero {
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    transition: height 0.66s ease-in-out;
+  }
+}
