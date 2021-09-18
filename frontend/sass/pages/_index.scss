@@ -1,0 +1,9 @@
+// flex h-2/3 w-full place-items-center flex-col
+.index {
+  display: flex;
+  height: 66%;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

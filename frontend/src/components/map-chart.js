@@ -1,11 +1,24 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import {
   ZoomableGroup,
   ComposableMap,
   Geographies,
   Geography,
   Marker,
+  Annotation,
 } from 'react-simple-maps';
+
+import MapEntity from './map-entity';
+
+const handleClick = (e) => {
+  const idSplit = e.currentTarget.id.split('_');
+  const id = idSplit[0];
+  const annotations = document.querySelectorAll(
+    "[id*='_map-chart__annotation']"
+  );
+  annotations.forEach((annotation) => (annotation.style.opacity = '0%'));
+  document.getElementById(`${id}_map-chart__annotation`).style.opacity = '100%';
+};
 
 const MapChart = (props) => {
   const { content, map } = props;
@@ -49,23 +62,51 @@ const MapChart = (props) => {
               ))
             }
           </Geographies>
+
           {content.map((missionary, idx) => (
-            <Marker
-              coordinates={[missionary.geocode.lng, missionary.geocode.lat]}
+            <g
               key={idx}
+              onClick={(e) => handleClick(e)}
+              id={`${idx}_map-chart__marker`}
+              className="map-chart__marker"
             >
-              <circle
-                r={3}
-                fill="#282828"
-                style={{
-                  pressed: {
-                    fill: '#2f426a',
-                    outline: 'none',
-                  },
-                }}
-              />
-            </Marker>
+              <Marker
+                coordinates={[missionary.geocode.lng, missionary.geocode.lat]}
+              >
+                <g
+                  fill="#5BA8A0"
+                  stroke="#5BA8A0"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  transform="translate(-12, -24)"
+                >
+                  <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+                </g>
+              </Marker>
+            </g>
           ))}
+
+          {content.map((missionary, idx) => {
+            return (
+              <Annotation
+                subject={[missionary.geocode.lng, missionary.geocode.lat]}
+                dx={-20}
+                dy={-10}
+                curve={-1.75}
+                connectorProps={{
+                  stroke: '#5BA8A0',
+                  strokeWidth: 1,
+                  strokeLinecap: 'round',
+                }}
+                className="map-chart__annotation"
+                id={`${idx}_map-chart__annotation`}
+                key={10 * idx}
+              >
+                <MapEntity missionary={missionary} />
+              </Annotation>
+            );
+          })}
         </ZoomableGroup>
       </ComposableMap>
     </>

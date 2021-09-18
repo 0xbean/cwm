@@ -1,0 +1,53 @@
+.map-entity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 0.5px solid black;
+
+  &__card {
+    height: 50%;
+    width: 85%;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &-header {
+      display: inline-block;
+      padding: 0;
+      margin: 0.5rem 0.5rem 0 0.5rem;
+      font-size: 0.5rem;
+    }
+
+    &-location {
+      display: inline-block;
+      padding: 0;
+      margin: 0 0.5rem 0 0.5rem;
+      font-size: 0.5rem;
+    }
+
+    &-link {
+      display: inline-block;
+      padding: 0;
+      margin: 0 0.5rem 0.5rem 0.5rem;
+      font-size: 0.5rem;
+    }
+  }
+}

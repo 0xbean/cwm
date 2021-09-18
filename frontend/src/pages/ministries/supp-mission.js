@@ -1,11 +1,7 @@
-export default function SuppMissionPage() {
+export default function SuppMissionaryPage() {
   return (
     <>
       <div className="test">Hello</div>
     </>
   );
 }
-
-// export default function GetServerSideProps({ ctx }) {
-
-// }

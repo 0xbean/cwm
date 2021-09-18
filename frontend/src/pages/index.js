@@ -4,11 +4,17 @@ import { useState } from 'react';
 import fs from 'fs';
 
 export default function IndexPage(props) {
-  const { content, map, sansFont, serifFont } = props;
+  const [tooltip, setToolTipActive] = useState('');
+  const { content, map } = props;
   return (
     <>
-      <div className="flex h-2/3 w-full place-items-center flex-col">
-        <MapChart content={content} map={map} />
+      <div className="index">
+        <MapChart
+          tooltip={tooltip}
+          setToolTipActive={setToolTipActive}
+          content={content}
+          map={map}
+        />
       </div>
     </>
   );
