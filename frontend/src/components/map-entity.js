@@ -24,7 +24,7 @@ const MapEntity = (props) => {
         <foreignObject x="-90" y="-100" width="100" height="100">
           <div className="map-entity">
             <div className="map-entity__card">
-              <p className="map-entity__card-header">{missionary.name}</p>
+              <h1 className="map-entity__card-header">{missionary.name}</h1>
               <p className="map-entity__card-location">{location}</p>
               <a
                 className="map-entity__card-link"

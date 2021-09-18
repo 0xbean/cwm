@@ -12,7 +12,7 @@ const Hero = (props) => {
         <a href="/">
           <img
             src="/images/bethel-cwm-logo.png"
-            className="mx-auto d-block col-md-3"
+            className="mx-auto d-block col-md-3 col-sm-3 col-3"
           />
         </a>
       </div>

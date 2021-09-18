@@ -2,8 +2,56 @@
 .index {
   display: flex;
   height: 66%;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  &__disclaimer {
+    margin-right: 5rem;
+    display: flex;
+    align-self: flex-end;
+  }
+
+  &__welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    @include respond(iphone) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    @include respond(phone) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    @include respond(desktop) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+  }
+
+  &__orgs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &-header {
+      display: flex;
+      align-self: flex-start;
+    }
+    &-carousel {
+      width: 50%;
+    }
+  }
 }

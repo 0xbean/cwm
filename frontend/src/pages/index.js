@@ -1,20 +1,36 @@
-import MapChart from '../components/map-chart';
-import { getRequest } from '../../tools/api';
-import { useState } from 'react';
+import React from 'react';
 import fs from 'fs';
 
+import MapChart from '../components/map-chart';
+import { getRequest } from '../../util/api';
+
+import { Carousel } from 'react-responsive-carousel';
+
 export default function IndexPage(props) {
-  const [tooltip, setToolTipActive] = useState('');
-  const { content, map } = props;
+  const { content, map, translation } = props;
   return (
     <>
       <div className="index">
-        <MapChart
-          tooltip={tooltip}
-          setToolTipActive={setToolTipActive}
-          content={content}
-          map={map}
-        />
+        <MapChart content={content} map={map} />
+        <p className="index__disclaimer">{translation.index.disclaimer}</p>
+        <div className="index__welcome col-md-12 col-sm-12 col-12">
+          <div className="index__welcome-text">
+            <h1>{translation.index.welcomeHeader}</h1>
+            <p>{translation.index.welcomeText}</p>
+          </div>
+          <div className="index__welcome-imgs">Other Side</div>
+        </div>
+
+        <div className="index__orgs">
+          <h1 className="index__orgs-header">
+            {translation.index.supportedOrgsHeader}
+          </h1>
+          <Carousel plugins={['arrows']} className="index__orgs-carousel">
+            <img src={'/images/seminars.png'} />
+            <img src={'/images/seminars.png'} />
+            <img src={'/images/seminars.png'} />
+          </Carousel>
+        </div>
       </div>
     </>
   );

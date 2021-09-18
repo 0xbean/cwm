@@ -10,6 +10,7 @@ import Footer from '../components/footer';
 
 import 'nprogress/nprogress.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import '../../public/css/styles.css';
 
 // This is where we configure the loading bar at the top of the screen when we're moving to the next page.
@@ -85,7 +86,7 @@ function MyApp({ Component, pageProps, translation }) {
       <Header />
       <div className="mx-auto app">
         <Hero router={router} image={image} content={translation.header} />
-        <Component {...pageProps} />
+        <Component translation={translation} {...pageProps} />
         <Footer content={translation.footer} />
       </div>
     </>

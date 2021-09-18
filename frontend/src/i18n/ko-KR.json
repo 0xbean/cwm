@@ -31,5 +31,11 @@
     "email": "",
     "phone": "",
     "address": ""
+  },
+  "index": {
+    "disclaimer": "*Disclaimer text, security reasons cannot disclose location of some missionaries",
+    "welcomeHeader": "Welcome Message",
+    "welcomeText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada nunc vel risus commodo. Ultrices eros in cursus turpis massa tincidunt dui ut. Egestas dui id ornare arcu odio ut. Bibendum arcu vitae elementum curabitur vitae nunc sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada nunc vel risus commodo. Ultrices eros in cursus turpis massa tincidunt dui ut. Egestas dui id ornare arcu odio ut. Bibendum arcu vitae elementum curabitur vitae nunc sed.",
+    "supportedOrgsHeader": "Organizations We Support"
   }
 }

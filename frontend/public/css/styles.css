@@ -273,12 +273,16 @@ These are the main fonts in the application that use the korean sans serif font
     padding: 0.5rem;
     white-space: nowrap; }
 
-.map-chart__marker {
-  cursor: pointer; }
-
-.map-chart__annotation {
-  opacity: 0%;
-  transition: all 0.2s ease-in-out; }
+.map-chart {
+  height: 100%;
+  width: 95vw;
+  margin: 0;
+  padding: 0; }
+  .map-chart__marker {
+    cursor: pointer; }
+  .map-chart__annotation {
+    opacity: 0%;
+    transition: all 0.2s ease-in-out; }
 
 .map-entity {
   display: flex;
@@ -293,7 +297,7 @@ These are the main fonts in the application that use the korean sans serif font
   border-radius: 10px;
   border: 0.5px solid black; }
   .map-entity__card {
-    height: 50%;
+    height: max-content;
     width: 85%;
     background: #f9f9f9;
     border-radius: 10px;
@@ -304,7 +308,7 @@ These are the main fonts in the application that use the korean sans serif font
     scrollbar-width: none;
     /* Firefox */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column; }
     .map-entity__card::-webkit-scrollbar {
@@ -313,7 +317,8 @@ These are the main fonts in the application that use the korean sans serif font
       display: inline-block;
       padding: 0;
       margin: 0.5rem 0.5rem 0 0.5rem;
-      font-size: 0.5rem; }
+      font-size: 0.75rem;
+      font-weight: bold; }
     .map-entity__card-location {
       display: inline-block;
       padding: 0;
@@ -342,7 +347,10 @@ nav {
   justify-content: center;
   position: relative;
   margin-top: auto;
-  height: 10rem; }
+  width: 100%;
+  height: 10rem;
+  margin-right: 0;
+  margin-left: 0; }
   .footer__img {
     width: 15%;
     height: auto;
@@ -429,7 +437,44 @@ nav {
 .index {
   display: flex;
   height: 66%;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   justify-content: center;
   flex-direction: column; }
+  .index__disclaimer {
+    margin-right: 5rem;
+    display: flex;
+    align-self: flex-end; }
+  .index__welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; }
+    @media only screen and (min-width: 23.4375em) {
+      .index__welcome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; } }
+    @media only screen and (min-width: 37.5em) {
+      .index__welcome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; } }
+    @media only screen and (min-width: 93.75em) {
+      .index__welcome {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row; } }
+  .index__orgs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    .index__orgs-header {
+      display: flex;
+      align-self: flex-start; }
+    .index__orgs-carousel {
+      width: 50%; }

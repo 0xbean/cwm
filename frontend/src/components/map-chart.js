@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo } from 'react';
 import {
   ZoomableGroup,
   ComposableMap,
@@ -9,6 +9,7 @@ import {
 } from 'react-simple-maps';
 
 import MapEntity from './map-entity';
+import { groupBy } from '../../util/helper';
 
 const handleClick = (e) => {
   const idSplit = e.currentTarget.id.split('_');
@@ -23,14 +24,17 @@ const handleClick = (e) => {
 const MapChart = (props) => {
   const { content, map } = props;
   const mapWidth = 800;
-  const mapHeight = 600;
+  const mapHeight = 500;
+
+  const groups = groupBy(content, 'geocode', ['lat', 'lng']);
+  const iterable = Object.entries(groups);
 
   const handleFilter = ({ constructor: { name } }) => {
     return name !== 'WheelEvent' && name != 'MouseEvent';
   };
 
   return (
-    <>
+    <div className="map-chart">
       <ComposableMap
         data-tip=""
         width={mapWidth}
@@ -87,10 +91,12 @@ const MapChart = (props) => {
             </g>
           ))}
 
-          {content.map((missionary, idx) => {
+          {iterable.map((missionaryGroup, idx) => {
+            const coords = missionaryGroup.shift();
+            const coordSplit = coords.split(':');
             return (
               <Annotation
-                subject={[missionary.geocode.lng, missionary.geocode.lat]}
+                subject={[coordSplit[1], coordSplit[0]]}
                 dx={-20}
                 dy={-10}
                 curve={-1.75}
@@ -103,13 +109,15 @@ const MapChart = (props) => {
                 id={`${idx}_map-chart__annotation`}
                 key={10 * idx}
               >
-                <MapEntity missionary={missionary} />
+                {missionaryGroup.map((missionary, idx) => (
+                  <MapEntity missionary={missionary[0]} key={idx} />
+                ))}
               </Annotation>
             );
           })}
         </ZoomableGroup>
       </ComposableMap>
-    </>
+    </div>
   );
 };
 
