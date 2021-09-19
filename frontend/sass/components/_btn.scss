@@ -1,13 +1,10 @@
 .btn {
-  background-color: $color-red;
-  color: $color-white;
-  padding: 1rem 3rem;
-  border-radius: 10rem;
-  border: none;
+  color: $color-teal;
+  padding: 1.5rem 4rem;
+  border-radius: 2rem;
+  border: 3px solid $color-teal;
   font-size: 2rem;
-  font-weight: 400;
-  transition: color 0.4s;
-  font-family: 'Oswald';
+  transition: all 0.4s;
 
   &:link,
   &:visited {
@@ -15,16 +12,18 @@
     text-decoration: none;
     text-transform: uppercase;
   }
-  &:hover,
-  &:active {
-    text-decoration: none;
-    color: rgba($color-white, 0.5);
-    cursor: pointer;
+  &:hover {
+    color: $color-teal;
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  @include respond(phone) {
-    // width < 1200?
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
+  &:active {
+    text-decoration: none;
+    transform: translateY(3px);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    background: linear-gradient($color-blue, $color-teal);
+    color: $color-white;
+    cursor: pointer;
   }
 }

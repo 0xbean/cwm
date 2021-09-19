@@ -38,10 +38,26 @@ body:lang(ko-KR) {
   font-style: normal;
 }
 
+h1:lang(en) {
+  font-family: 'EBGaramond', Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: bold;
+}
+
+h1:lang(ko-KR) {
+  font-family: 'Korean-EBGaramond', Verdana, sans-serif;
+  font-weight: 500;
+  font-style: bold;
+}
+
 #nprogress .bar {
   background: $color-blue !important;
 }
 
 .hidden-link {
   display: none;
+}
+
+.nav-link {
+  margin: 0 1rem 0 1rem;
 }

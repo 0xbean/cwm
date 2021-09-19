@@ -1,0 +1,35 @@
+.about {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  &__header {
+  }
+
+  &__text {
+    font-size: 1.2rem;
+  }
+
+  &__team {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+
+    &-card {
+      margin: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &-header {
+      margin: 1rem;
+    }
+    &-extra {
+    }
+  }
+}

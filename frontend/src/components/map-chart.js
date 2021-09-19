@@ -5,21 +5,13 @@ import {
   Geographies,
   Geography,
   Marker,
-  Annotation,
 } from 'react-simple-maps';
+import _ from 'lodash';
 
-import MapEntity from './map-entity';
+import MapAnnotation from './map-annotation';
+import MapMarker from './map-marker';
+
 import { groupBy } from '../../util/helper';
-
-const handleClick = (e) => {
-  const idSplit = e.currentTarget.id.split('_');
-  const id = idSplit[0];
-  const annotations = document.querySelectorAll(
-    "[id*='_map-chart__annotation']"
-  );
-  annotations.forEach((annotation) => (annotation.style.opacity = '0%'));
-  document.getElementById(`${id}_map-chart__annotation`).style.opacity = '100%';
-};
 
 const MapChart = (props) => {
   const { content, map } = props;
@@ -28,6 +20,7 @@ const MapChart = (props) => {
 
   const groups = groupBy(content, 'geocode', ['lat', 'lng']);
   const iterable = Object.entries(groups);
+  const markerIterable = _.cloneDeep(iterable);
 
   const handleFilter = ({ constructor: { name } }) => {
     return name !== 'WheelEvent' && name != 'MouseEvent';
@@ -67,52 +60,23 @@ const MapChart = (props) => {
             }
           </Geographies>
 
-          {content.map((missionary, idx) => (
-            <g
-              key={idx}
-              onClick={(e) => handleClick(e)}
-              id={`${idx}_map-chart__marker`}
-              className="map-chart__marker"
-            >
-              <Marker
-                coordinates={[missionary.geocode.lng, missionary.geocode.lat]}
-              >
-                <g
-                  fill="#5BA8A0"
-                  stroke="#5BA8A0"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  transform="translate(-12, -24)"
-                >
-                  <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-                </g>
-              </Marker>
-            </g>
-          ))}
+          {markerIterable.map((missionaryGroup, idx) => {
+            const coords = missionaryGroup.shift();
+            const coordSplit = coords.split(':');
+            return <MapMarker coordSplit={coordSplit} idx={idx} key={idx} />;
+          })}
 
           {iterable.map((missionaryGroup, idx) => {
             const coords = missionaryGroup.shift();
             const coordSplit = coords.split(':');
+            const missionaries = missionaryGroup[0];
             return (
-              <Annotation
-                subject={[coordSplit[1], coordSplit[0]]}
-                dx={-20}
-                dy={-10}
-                curve={-1.75}
-                connectorProps={{
-                  stroke: '#5BA8A0',
-                  strokeWidth: 1,
-                  strokeLinecap: 'round',
-                }}
-                className="map-chart__annotation"
-                id={`${idx}_map-chart__annotation`}
-                key={10 * idx}
-              >
-                {missionaryGroup.map((missionary, idx) => (
-                  <MapEntity missionary={missionary[0]} key={idx} />
-                ))}
-              </Annotation>
+              <MapAnnotation
+                missionaries={missionaries}
+                coordSplit={coordSplit}
+                idx={idx}
+                key={idx * 10}
+              />
             );
           })}
         </ZoomableGroup>
