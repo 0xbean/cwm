@@ -37,5 +37,20 @@
     "welcomeHeader": "Welcome Message",
     "welcomeText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada nunc vel risus commodo. Ultrices eros in cursus turpis massa tincidunt dui ut. Egestas dui id ornare arcu odio ut. Bibendum arcu vitae elementum curabitur vitae nunc sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada nunc vel risus commodo. Ultrices eros in cursus turpis massa tincidunt dui ut. Egestas dui id ornare arcu odio ut. Bibendum arcu vitae elementum curabitur vitae nunc sed.",
     "supportedOrgsHeader": "Organizations We Support"
+  },
+  "about": {
+    "header": "Vision Statement",
+    "visionText": "Develop and implement a ministry to carry out the Lord's Great Commission by preaching the Gospel of Jesus Christ to other cultures in the United States and abroad.",
+    "teamHeader": "Our Team",
+    "director": "Director",
+    "trustees": "Board of Trustees",
+    "committee": "Executive Committee",
+    "committeeRoles": "Clerk, Secretary, Treasurer, and Other Team Members"
+  },
+  "careNet": {
+    "header": "About",
+    "body": "CareNet is a network between Bethel small groups and missionaries supported by Bethel where each small group is assigned to a particular missionary. It is to promote interest and to cultivate a missional mind through sharing the news of the mission fields and supporting missionaries with prayer and care.",
+    "connectText": "To sign up or for more information",
+    "connectButton": "Connect with a Missionary"
   }
 }

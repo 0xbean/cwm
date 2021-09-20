@@ -2,9 +2,12 @@ const Footer = (props) => {
   const { content } = props;
 
   return (
-    <div className="footer col-md-12 col-sm-12 col-lg-12 row">
-      <img src="/images/bethel-cwm-logo-small.png" className="footer__img" />
-      <div className="footer__contact">
+    <div className="footer col-md-12 col-sm-12 col-lg-12 col-12">
+      <div className="footer__img-container">
+        <img src="/images/bethel-cwm-logo-small.png" className="footer__img" />
+      </div>
+
+      <div className="footer__contact col-md-12 col-sm-12 col-lg-12 col-12">
         <p className="footer__contact-text">{content.title}</p>
         <p className="footer__contact-text">EMAIL | PHONE | ADDRESS</p>
       </div>

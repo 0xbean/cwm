@@ -21,7 +21,7 @@ const Hero = (props) => {
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="offset-md-5">
+            <Nav className="mx-auto">
               <Nav.Link href="/about">{content.nav.about.name}</Nav.Link>
               <NavDropdown
                 title={content.nav.ministries.name}
@@ -59,7 +59,7 @@ const Hero = (props) => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Nav className="offset-md-5">
+            <Nav>
               <TranslationSlider router={router} />
             </Nav>
           </Navbar.Collapse>

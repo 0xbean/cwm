@@ -1,5 +1,20 @@
 import { Marker } from 'react-simple-maps';
 
+const handleClick = (e) => {
+  const idSplit = e.currentTarget.id.split('_');
+  const id = idSplit[0];
+  const annotations = document.querySelectorAll(
+    "[id*='_map-chart__annotation']"
+  );
+  annotations.forEach((annotation) => {
+    annotation.style.opacity = '0%';
+    annotation.style.display = 'none';
+  });
+  document.getElementById(`${id}_map-chart__annotation`).style.opacity = '100%';
+  document.getElementById(`${id}_map-chart__annotation`).style.display =
+    'block';
+};
+
 const MapMarker = (props) => {
   const { coordSplit, idx } = props;
   return (
