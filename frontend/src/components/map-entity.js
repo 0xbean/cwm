@@ -16,7 +16,7 @@ const MapEntity = (props) => {
         <p className="map-entity__card-location">{location}</p>
         <a
           className="map-entity__card-link"
-          href={`/ministries/supp-mission/${missionary.id}`}
+          href={`/ministries/supp-mission/${missionary.id}/#information`}
         >
           Learn More
         </a>

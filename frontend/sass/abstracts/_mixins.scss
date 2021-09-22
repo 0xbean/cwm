@@ -38,7 +38,7 @@ ORDER: Base + typography > general layout > page layout > components
   @if $breakpoint == iphone {
     @media only screen and (min-width: 23.4375em) {
       @content;
-    } //600px
+    } //375px
   }
 
   @if $breakpoint == phone {
@@ -62,7 +62,7 @@ ORDER: Base + typography > general layout > page layout > components
   @if $breakpoint == desktop {
     @media only screen and (min-width: 93.75em) {
       @content;
-    } //
+    } //1500
   }
 
   @if $breakpoint == big-desktop {

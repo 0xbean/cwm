@@ -1,0 +1,87 @@
+.supp-org {
+  margin: 10rem 0 10rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  width: 70%;
+
+  &__orgs {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: row;
+
+      &--card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 3rem;
+
+        @include respond(iphone) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin: 2rem;
+        }
+
+        @include respond(phone) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin: 2rem;
+        }
+
+        @include respond(desktop) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          margin: 3rem;
+        }
+
+        &---img {
+          height: 30rem !important;
+          width: 30rem !important;
+          object-fit: scale-down;
+
+          @include respond(iphone) {
+            height: 10rem !important;
+            width: 10rem !important;
+            object-fit: scale-down;
+          }
+
+          @include respond(phone) {
+            height: 20rem !important;
+            width: 20rem !important;
+            object-fit: scale-down;
+          }
+
+          @include respond(desktop) {
+            height: 30rem !important;
+            width: 30rem !important;
+            object-fit: scale-down;
+          }
+        }
+
+        &---btn {
+          font-size: 1rem;
+          padding: 1rem 3rem;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

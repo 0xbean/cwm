@@ -44,12 +44,20 @@ body:lang(ko-KR) {
   font-weight: 500;
   font-style: normal; }
 
-h1:lang(en) {
+h1:lang(en),
+h2:lang(en),
+h3:lang(en),
+h4:lang(en),
+h5:lang(en) {
   font-family: 'EBGaramond', Helvetica, sans-serif;
   font-weight: 500;
   font-style: bold; }
 
-h1:lang(ko-KR) {
+h1:lang(ko-KR),
+h2:lang(ko-KR),
+h3:lang(ko-KR),
+h4:lang(ko-KR),
+h5:lang(ko-KR) {
   font-family: 'Korean-EBGaramond', Verdana, sans-serif;
   font-weight: 500;
   font-style: bold; }
@@ -348,10 +356,34 @@ These are the main fonts in the application that use the korean sans serif font
 .btn {
   color: #5ba8a0;
   padding: 1.5rem 4rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   border: 3px solid #5ba8a0;
   font-size: 2rem;
   transition: all 0.4s; }
+  @media only screen and (min-width: 23.4375em) {
+    .btn {
+      color: #5ba8a0;
+      padding: 1rem 3rem;
+      border-radius: 1rem;
+      border: 3px solid #5ba8a0;
+      font-size: 1rem;
+      transition: all 0.4s; } }
+  @media only screen and (min-width: 37.5em) {
+    .btn {
+      color: #5ba8a0;
+      padding: 1rem 3rem;
+      border-radius: 1rem;
+      border: 3px solid #5ba8a0;
+      font-size: 1rem;
+      transition: all 0.4s; } }
+  @media only screen and (min-width: 93.75em) {
+    .btn {
+      color: #5ba8a0;
+      padding: 1.5rem 4rem;
+      border-radius: 1rem;
+      border: 3px solid #5ba8a0;
+      font-size: 2rem;
+      transition: all 0.4s; } }
   .btn:link, .btn:visited {
     color: #ffffff;
     text-decoration: none;
@@ -424,7 +456,8 @@ nav {
 .index {
   display: flex;
   height: 66%;
-  width: 100%;
+  width: 90%;
+  align-self: center;
   align-items: center;
   justify-content: center;
   flex-direction: column; }
@@ -436,25 +469,38 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row; }
+    flex-direction: row;
+    margin: 5rem 0 5rem 0; }
     @media only screen and (min-width: 23.4375em) {
       .index__welcome {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column; } }
+        flex-direction: column;
+        margin: 5rem 0 5rem 0; } }
     @media only screen and (min-width: 37.5em) {
       .index__welcome {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column; } }
+        flex-direction: column;
+        margin: 5rem 0 5rem 0; } }
     @media only screen and (min-width: 93.75em) {
       .index__welcome {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: row; } }
+        flex-direction: row;
+        margin: 5rem 0 5rem 0; } }
+    .index__welcome-text {
+      margin: 5rem 0 5rem 0; }
+    .index__welcome-imgs {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center; }
+      .index__welcome-imgs > img {
+        margin: 0 1rem 0 1rem;
+        width: 50%; }
   .index__orgs {
     display: flex;
     align-items: center;
@@ -464,7 +510,18 @@ nav {
       display: flex;
       align-self: flex-start; }
     .index__orgs-carousel {
-      width: 50%; }
+      width: 100%; }
+      .index__orgs-carousel--card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0; }
+        .index__orgs-carousel--card > img {
+          max-height: 10rem !important;
+          max-width: 10rem !important;
+          padding-bottom: 2rem;
+          object-fit: scale-down; }
 
 .about {
   display: flex;
@@ -473,6 +530,8 @@ nav {
   justify-content: center;
   flex-direction: column;
   width: 60%; }
+  .about__header {
+    white-space: nowrap; }
   .about__text {
     font-size: 1.2rem; }
   .about__team {
@@ -481,14 +540,138 @@ nav {
     justify-content: space-between;
     flex-direction: row;
     width: 100%; }
+    @media only screen and (min-width: 23.4375em) {
+      .about__team {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%; } }
+    @media only screen and (min-width: 37.5em) {
+      .about__team {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%; } }
+    @media only screen and (min-width: 93.75em) {
+      .about__team {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%; } }
     .about__team-card {
-      margin: 2rem;
+      margin: 2rem 0 2rem 0;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column; }
+      .about__team-card > img {
+        width: 20rem;
+        height: 20rem;
+        object-fit: contain; }
+        @media only screen and (min-width: 23.4375em) {
+          .about__team-card > img {
+            width: 10rem;
+            height: 10rem;
+            object-fit: contain; } }
+        @media only screen and (min-width: 37.5em) {
+          .about__team-card > img {
+            width: 10rem;
+            height: 10rem;
+            object-fit: contain; } }
+        @media only screen and (min-width: 93.75em) {
+          .about__team-card > img {
+            width: 20rem;
+            height: 20rem;
+            object-fit: contain; } }
     .about__team-header {
-      margin: 1rem; }
+      margin: 2rem 0 2rem 0; }
+    .about__team-text--header {
+      margin: 2rem 0 1rem 0; }
+    .about__team-text--extra {
+      width: 20rem; }
+
+.supp-mission {
+  display: flex;
+  height: 66%;
+  width: 90%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.supp-org {
+  margin: 10rem 0 10rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  width: 70%; }
+  .supp-org__orgs {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+    .supp-org__orgs-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: row; }
+      .supp-org__orgs-row--card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 3rem; }
+        @media only screen and (min-width: 23.4375em) {
+          .supp-org__orgs-row--card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 2rem; } }
+        @media only screen and (min-width: 37.5em) {
+          .supp-org__orgs-row--card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 2rem; } }
+        @media only screen and (min-width: 93.75em) {
+          .supp-org__orgs-row--card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 3rem; } }
+        .supp-org__orgs-row--card---img {
+          height: 30rem !important;
+          width: 30rem !important;
+          object-fit: scale-down; }
+          @media only screen and (min-width: 23.4375em) {
+            .supp-org__orgs-row--card---img {
+              height: 10rem !important;
+              width: 10rem !important;
+              object-fit: scale-down; } }
+          @media only screen and (min-width: 37.5em) {
+            .supp-org__orgs-row--card---img {
+              height: 20rem !important;
+              width: 20rem !important;
+              object-fit: scale-down; } }
+          @media only screen and (min-width: 93.75em) {
+            .supp-org__orgs-row--card---img {
+              height: 30rem !important;
+              width: 30rem !important;
+              object-fit: scale-down; } }
+        .supp-org__orgs-row--card---btn {
+          font-size: 1rem;
+          padding: 1rem 3rem;
+          white-space: nowrap; }
 
 .care-net {
   display: flex;

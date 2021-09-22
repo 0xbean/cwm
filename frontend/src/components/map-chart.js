@@ -13,11 +13,11 @@ import MapMarker from './map-marker';
 import { groupBy } from '../../util/helper';
 
 const MapChart = (props) => {
-  const { content, map } = props;
+  const { mapContent, map } = props;
   const mapWidth = 800;
   const mapHeight = 500;
 
-  const groups = groupBy(content, 'geocode', ['lat', 'lng']);
+  const groups = groupBy(mapContent, 'geocode', ['lat', 'lng']);
   const iterable = Object.entries(groups);
   const markerIterable = _.cloneDeep(iterable);
 

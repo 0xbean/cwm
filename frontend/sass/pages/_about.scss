@@ -6,6 +6,7 @@
   flex-direction: column;
   width: 60%;
   &__header {
+    white-space: nowrap;
   }
 
   &__text {
@@ -19,17 +20,73 @@
     flex-direction: row;
     width: 100%;
 
-    &-card {
-      margin: 2rem;
+    @include respond(iphone) {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      width: 100%;
     }
+
+    @include respond(phone) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    @include respond(desktop) {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    &-card {
+      margin: 2rem 0 2rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      & > img {
+        width: 20rem;
+        height: 20rem;
+        object-fit: contain;
+
+        @include respond(iphone) {
+          width: 10rem;
+          height: 10rem;
+          object-fit: contain;
+        }
+
+        @include respond(phone) {
+          width: 10rem;
+          height: 10rem;
+          object-fit: contain;
+        }
+
+        @include respond(desktop) {
+          width: 20rem;
+          height: 20rem;
+          object-fit: contain;
+        }
+      }
+    }
+
     &-header {
-      margin: 1rem;
+      margin: 2rem 0 2rem 0;
     }
-    &-extra {
+
+    &-text {
+      &--header {
+        margin: 2rem 0 1rem 0;
+      }
+      &--extra {
+        width: 20rem;
+      }
     }
   }
 }

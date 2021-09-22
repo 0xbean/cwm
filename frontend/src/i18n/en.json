@@ -47,6 +47,19 @@
     "committee": "Executive Committee",
     "committeeRoles": "Clerk, Secretary, Treasurer, and Other Team Members"
   },
+  "suppMission": {
+    "sentMissionHeader": "Sent Missionary",
+    "sentMissionText": "Bethel Church send out, after the selection process set by the church, long-term missionaries who will serve for four or more years in the mission fields or mission organizations and short-term missionaries who will serve from six months to four years. Today, Bethel has four long-term missionary families in three mission fields.",
+    "seniorMissionHeader": "Senior Missionary",
+    "seniorMissionText": "A senior missionary is a short-term missionary with age over 55 who will serve within two years at the mission field. Currently, Bethel has sent out two senior missionary families to two regions.",
+    "associateMissionHeader": "Associate Missionary",
+    "associateMissionText": "We support missionaries, including local ministers, who are sent through accredited mission agencies or churches with a strategy and direction that meets the mission policy of Bethel. Today, Bethel support 46 associate missionary families throughout the world.",
+    "applyButtonText": "Apply for Mission Support"
+  },
+  "suppOrg": {
+    "mainButton": "Apply for Organization Support",
+    "visitWebsite": "Visit Website"
+  },
   "careNet": {
     "header": "About",
     "body": "CareNet is a network between Bethel small groups and missionaries supported by Bethel where each small group is assigned to a particular missionary. It is to promote interest and to cultivate a missional mind through sharing the news of the mission fields and supporting missionaries with prayer and care.",

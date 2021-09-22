@@ -1,3 +1,12 @@
+// https://youmightnotneed.com/lodash/
+
+export function chunk(arr, chunkSize = 1, cache = []) {
+  const tmp = [...arr];
+  if (chunkSize <= 0) return cache;
+  while (tmp.length) cache.push(tmp.splice(0, chunkSize));
+  return cache;
+}
+
 // https://gist.github.com/robmathers/1830ce09695f759bf2c4df15c29dd22d#gistcomment-3486844
 
 /**

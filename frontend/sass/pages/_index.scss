@@ -2,7 +2,8 @@
 .index {
   display: flex;
   height: 66%;
-  width: 100%;
+  width: 90%;
+  align-self: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -18,12 +19,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin: 5rem 0 5rem 0;
 
     @include respond(iphone) {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      margin: 5rem 0 5rem 0;
     }
 
     @include respond(phone) {
@@ -31,6 +34,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      margin: 5rem 0 5rem 0;
     }
 
     @include respond(desktop) {
@@ -38,6 +42,22 @@
       align-items: center;
       justify-content: center;
       flex-direction: row;
+      margin: 5rem 0 5rem 0;
+    }
+
+    &-text {
+      margin: 5rem 0 5rem 0;
+    }
+
+    &-imgs {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      & > img {
+        margin: 0 1rem 0 1rem;
+        width: 50%;
+      }
     }
   }
 
@@ -51,7 +71,21 @@
       align-self: flex-start;
     }
     &-carousel {
-      width: 50%;
+      width: 100%;
+
+      &--card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        & > img {
+          max-height: 10rem !important;
+          max-width: 10rem !important;
+          padding-bottom: 2rem;
+          object-fit: scale-down;
+        }
+      }
     }
   }
 }

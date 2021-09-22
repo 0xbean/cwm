@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
 import { Router as R } from 'next/dist/client/router';
 import App from 'next/app';
+import { SSRProvider } from '@react-aria/ssr';
 
 import Header from '../components/header';
 import Hero from '../components/hero';
@@ -82,14 +83,14 @@ function MyApp({ Component, pageProps, translation }) {
   const router = useRouter();
   const image = heroImage(router.pathname);
   return (
-    <>
+    <SSRProvider>
       <Header />
       <div className="mx-auto app">
         <Hero router={router} image={image} content={translation.header} />
         <Component translation={translation} {...pageProps} />
         <Footer content={translation.footer} />
       </div>
-    </>
+    </SSRProvider>
   );
 }
 
