@@ -6,4 +6,40 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  &__definitions {
+    margin: 6rem 0 6rem 0;
+    display: flex;
+    width: 60%;
+    align-self: center;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    &-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+
+      @include respond(iphone) {
+        flex-direction: column;
+      }
+
+      @include respond(phone) {
+        flex-direction: column;
+      }
+
+      @include respond(desktop) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+
+      & > h1 {
+        text-align: start;
+        white-space: nowrap;
+      }
+    }
+  }
 }

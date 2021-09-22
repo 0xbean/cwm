@@ -26,3 +26,52 @@ export const groupBy = (arr, parentKey, keys) => {
     return storage;
   }, {});
 };
+
+export function heroImage(pathname) {
+  let image = '';
+  const params = pathname.split('/');
+  let path = `/${params[1]}`;
+  switch (path) {
+    case '/':
+      break;
+    case '/about':
+      image = '/images/about.png';
+      break;
+    case '/ministries':
+      switch (`${params[2]}`) {
+        case 'care-net':
+          image = '/images/care-net.png';
+          break;
+        case 'short-term':
+          image = '/images/stm.png';
+          break;
+        case 'supp-mission':
+          image = '/images/supported-missionaries.png';
+          break;
+        case 'supp-org':
+          image = '/images/supported-organizations.png';
+          break;
+      }
+      break;
+    case '/resources':
+      switch (`${params[2]}`) {
+        case 'perspectives':
+          image = '/images/perspectives.png';
+          break;
+        case 'seminars':
+          image = '/images/seminars.png';
+          break;
+        case 'senior-missions':
+          image = '/images/senior-missions-training.png';
+          break;
+        case 'short-term':
+          image = '/images/stm-training.png';
+          break;
+      }
+      break;
+    default:
+      break;
+  }
+
+  return image;
+}

@@ -54,7 +54,16 @@
     "seniorMissionText": "A senior missionary is a short-term missionary with age over 55 who will serve within two years at the mission field. Currently, Bethel has sent out two senior missionary families to two regions.",
     "associateMissionHeader": "Associate Missionary",
     "associateMissionText": "We support missionaries, including local ministers, who are sent through accredited mission agencies or churches with a strategy and direction that meets the mission policy of Bethel. Today, Bethel support 46 associate missionary families throughout the world.",
-    "applyButtonText": "Apply for Mission Support"
+    "applyButtonText": "Apply for Mission Support",
+    "searchByContinent": "Search by Continent:",
+    "continents": {
+      "africa": "Africa",
+      "asia": "Asia",
+      "australia": "Australia",
+      "europe": "Europe",
+      "northAmerica": "North America",
+      "southAmerica": "South America"
+    }
   },
   "suppOrg": {
     "mainButton": "Apply for Organization Support",

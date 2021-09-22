@@ -1,6 +1,8 @@
 import fs from 'fs';
 
+import Missionaries from '../../components/missionaries';
 import MapChart from '../../components/map-chart';
+
 import { getRequest } from '../../../util/api';
 
 export default function SuppMissionaryPage(props) {
@@ -10,27 +12,34 @@ export default function SuppMissionaryPage(props) {
     <>
       <div className="supp-mission">
         <div className="supp-mission__definitions">
-          <div className="supp-mission__definitions-block">
-            <h1>{translation.suppMission.sentMissionHeader}</h1>
-            <p>{translation.suppMission.sentMissionText}</p>
+          <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
+            <h1 className="col-md-4 col-sm-6 col-6">
+              {translation.suppMission.sentMissionHeader}
+            </h1>
+            <p className="col-md-8 col-sm-6 col-6">
+              {translation.suppMission.sentMissionText}
+            </p>
           </div>
-          <div className="supp-mission__definitions-block">
-            <h1>{translation.suppMission.seniorMissionHeader}</h1>
-            <p>{translation.suppMission.seniorMissionText}</p>
+          <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
+            <h1 className="col-md-4 col-sm-6 col-6">
+              {translation.suppMission.seniorMissionHeader}
+            </h1>
+            <p className="col-md-8 col-sm-6 col-6">
+              {translation.suppMission.seniorMissionText}
+            </p>
           </div>
-          <div className="supp-mission__definitions-block">
-            <h1>{translation.suppMission.associateMissionHeader}</h1>
-            <p>{translation.suppMission.associateMissionText}</p>
+          <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
+            <h1 className="col-md-4 col-sm-6 col-6">
+              {translation.suppMission.associateMissionHeader}
+            </h1>
+            <p className="col-md-8 col-sm-6 col-6">
+              {translation.suppMission.associateMissionText}
+            </p>
           </div>
         </div>
         <div className="btn">{translation.suppMission.applyButtonText}</div>
-        <MapChart mapContent={mapContent} map={map} />
-        <div className="supp-mission__missionaries">
-          <div className="supp-mission__missionaries-continent"></div>
-          <div className="supp-mission__missionaries-info" id="information">
-            test
-          </div>
-        </div>
+        <MapChart mapContent={mapContent} map={map} translation={translation} />
+        <Missionaries missionaries={mapContent} />
       </div>
     </>
   );

@@ -8,8 +8,6 @@ export default function SuppOrgPage(props) {
 
   const groups = chunk(orgContent, 3);
 
-  console.log(orgContent);
-
   return (
     <>
       <div className="supp-org">

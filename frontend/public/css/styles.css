@@ -473,18 +473,10 @@ nav {
     margin: 5rem 0 5rem 0; }
     @media only screen and (min-width: 23.4375em) {
       .index__welcome {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin: 5rem 0 5rem 0; } }
+        flex-direction: column; } }
     @media only screen and (min-width: 37.5em) {
       .index__welcome {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin: 5rem 0 5rem 0; } }
+        flex-direction: column; } }
     @media only screen and (min-width: 93.75em) {
       .index__welcome {
         display: flex;
@@ -542,18 +534,14 @@ nav {
     width: 100%; }
     @media only screen and (min-width: 23.4375em) {
       .about__team {
-        display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        width: 100%; } }
+        flex-direction: column; } }
     @media only screen and (min-width: 37.5em) {
       .about__team {
-        display: flex;
         align-items: center;
         justify-content: center;
-        flex-direction: column;
-        width: 100%; } }
+        flex-direction: column; } }
     @media only screen and (min-width: 93.75em) {
       .about__team {
         display: flex;
@@ -574,18 +562,11 @@ nav {
         @media only screen and (min-width: 23.4375em) {
           .about__team-card > img {
             width: 10rem;
-            height: 10rem;
-            object-fit: contain; } }
+            height: 10rem; } }
         @media only screen and (min-width: 37.5em) {
           .about__team-card > img {
             width: 10rem;
-            height: 10rem;
-            object-fit: contain; } }
-        @media only screen and (min-width: 93.75em) {
-          .about__team-card > img {
-            width: 20rem;
-            height: 20rem;
-            object-fit: contain; } }
+            height: 10rem; } }
     .about__team-header {
       margin: 2rem 0 2rem 0; }
     .about__team-text--header {
@@ -601,6 +582,34 @@ nav {
   align-items: center;
   justify-content: center;
   flex-direction: column; }
+  .supp-mission__definitions {
+    margin: 6rem 0 6rem 0;
+    display: flex;
+    width: 60%;
+    align-self: center;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column; }
+    .supp-mission__definitions-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row; }
+      @media only screen and (min-width: 23.4375em) {
+        .supp-mission__definitions-block {
+          flex-direction: column; } }
+      @media only screen and (min-width: 37.5em) {
+        .supp-mission__definitions-block {
+          flex-direction: column; } }
+      @media only screen and (min-width: 93.75em) {
+        .supp-mission__definitions-block {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row; } }
+      .supp-mission__definitions-block > h1 {
+        text-align: start;
+        white-space: nowrap; }
 
 .supp-org {
   margin: 10rem 0 10rem 0;
@@ -630,24 +639,12 @@ nav {
         margin: 3rem; }
         @media only screen and (min-width: 23.4375em) {
           .supp-org__orgs-row--card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
             margin: 2rem; } }
         @media only screen and (min-width: 37.5em) {
           .supp-org__orgs-row--card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
             margin: 2rem; } }
         @media only screen and (min-width: 93.75em) {
           .supp-org__orgs-row--card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
             margin: 3rem; } }
         .supp-org__orgs-row--card---img {
           height: 30rem !important;
@@ -656,13 +653,11 @@ nav {
           @media only screen and (min-width: 23.4375em) {
             .supp-org__orgs-row--card---img {
               height: 10rem !important;
-              width: 10rem !important;
-              object-fit: scale-down; } }
+              width: 10rem !important; } }
           @media only screen and (min-width: 37.5em) {
             .supp-org__orgs-row--card---img {
               height: 20rem !important;
-              width: 20rem !important;
-              object-fit: scale-down; } }
+              width: 20rem !important; } }
           @media only screen and (min-width: 93.75em) {
             .supp-org__orgs-row--card---img {
               height: 30rem !important;

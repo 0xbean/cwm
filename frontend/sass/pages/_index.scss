@@ -22,19 +22,11 @@
     margin: 5rem 0 5rem 0;
 
     @include respond(iphone) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
-      margin: 5rem 0 5rem 0;
     }
 
     @include respond(phone) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       flex-direction: column;
-      margin: 5rem 0 5rem 0;
     }
 
     @include respond(desktop) {

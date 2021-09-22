@@ -21,19 +21,15 @@
     width: 100%;
 
     @include respond(iphone) {
-      display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      width: 100%;
     }
 
     @include respond(phone) {
-      display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      width: 100%;
     }
 
     @include respond(desktop) {
@@ -59,19 +55,11 @@
         @include respond(iphone) {
           width: 10rem;
           height: 10rem;
-          object-fit: contain;
         }
 
         @include respond(phone) {
           width: 10rem;
           height: 10rem;
-          object-fit: contain;
-        }
-
-        @include respond(desktop) {
-          width: 20rem;
-          height: 20rem;
-          object-fit: contain;
         }
       }
     }

@@ -29,26 +29,14 @@
         margin: 3rem;
 
         @include respond(iphone) {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
           margin: 2rem;
         }
 
         @include respond(phone) {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
           margin: 2rem;
         }
 
         @include respond(desktop) {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
           margin: 3rem;
         }
 
@@ -60,13 +48,11 @@
           @include respond(iphone) {
             height: 10rem !important;
             width: 10rem !important;
-            object-fit: scale-down;
           }
 
           @include respond(phone) {
             height: 20rem !important;
             width: 20rem !important;
-            object-fit: scale-down;
           }
 
           @include respond(desktop) {

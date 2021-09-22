@@ -24,11 +24,9 @@ export default function SuppMissionaryPage(props) {
         </div>
         <div className="btn">{translation.suppMission.applyButtonText}</div>
         <MapChart mapContent={mapContent} map={map} />
-        <div className="supp-mission__missionaries">
+        <div className="supp-mission__missionaries" id="information">
           <div className="supp-mission__missionaries-continent"></div>
-          <div className="supp-mission__missionaries-info" id="information">
-            test
-          </div>
+          <div className="supp-mission__missionaries-info"></div>
         </div>
       </div>
     </>
