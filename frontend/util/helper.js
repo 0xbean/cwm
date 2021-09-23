@@ -14,7 +14,7 @@ export function chunk(arr, chunkSize = 1, cache = []) {
  * @param {string} parentKey
  * @param {string[]} keys
  */
-export const groupBy = (arr, parentKey, keys) => {
+export function groupBy(arr, parentKey, keys) {
   return arr.reduce((storage, item) => {
     const parentObj = item[parentKey];
     const objKey = keys.map((key) => `${parentObj[key]}`).join(':'); //should be some unique delimiter that wont appear in your keys
@@ -25,7 +25,7 @@ export const groupBy = (arr, parentKey, keys) => {
     }
     return storage;
   }, {});
-};
+}
 
 export function heroImage(pathname) {
   let image = '';
@@ -74,4 +74,17 @@ export function heroImage(pathname) {
   }
 
   return image;
+}
+
+// Make sure that we have mapContent available before we start doing any data transformations.
+export function getIterable(array, key, childKey) {
+  if (!array || array === undefined) {
+    return null;
+  }
+
+  const groups = groupBy(array, key, childKey);
+  // Create a new reference to this object so that we don't run into multiple data manipulations.
+  const iterable = JSON.parse(JSON.stringify(Object.entries(groups)));
+
+  return iterable;
 }

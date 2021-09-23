@@ -10,16 +10,12 @@ import _ from 'lodash';
 import MapAnnotation from './map-annotation';
 import MapMarker from './map-marker';
 
-import { groupBy } from '../../util/helper';
+import { getIterable } from '../../util/helper';
 
 const MapChart = (props) => {
   const { mapContent, map } = props;
   const mapWidth = 800;
   const mapHeight = 500;
-
-  const groups = groupBy(mapContent, 'geocode', ['lat', 'lng']);
-  const iterable = Object.entries(groups);
-  const markerIterable = _.cloneDeep(iterable);
 
   const handleFilter = ({ constructor: { name } }) => {
     return name !== 'WheelEvent' && name != 'MouseEvent';
@@ -58,26 +54,35 @@ const MapChart = (props) => {
               ))
             }
           </Geographies>
+          {mapContent && mapContent !== undefined ? (
+            <>
+              {getIterable(mapContent, 'geocode', ['lat', 'lng']).map(
+                (missionaryGroup, idx) => {
+                  const coords = missionaryGroup.shift();
+                  const coordSplit = coords.split(':');
+                  return (
+                    <MapMarker coordSplit={coordSplit} idx={idx} key={idx} />
+                  );
+                }
+              )}
 
-          {markerIterable.map((missionaryGroup, idx) => {
-            const coords = missionaryGroup.shift();
-            const coordSplit = coords.split(':');
-            return <MapMarker coordSplit={coordSplit} idx={idx} key={idx} />;
-          })}
-
-          {iterable.map((missionaryGroup, idx) => {
-            const coords = missionaryGroup.shift();
-            const coordSplit = coords.split(':');
-            const missionaries = missionaryGroup[0];
-            return (
-              <MapAnnotation
-                missionaries={missionaries}
-                coordSplit={coordSplit}
-                idx={idx}
-                key={idx * 10}
-              />
-            );
-          })}
+              {getIterable(mapContent, 'geocode', ['lat', 'lng']).map(
+                (missionaryGroup, idx) => {
+                  const coords = missionaryGroup.shift();
+                  const coordSplit = coords.split(':');
+                  const missionaries = missionaryGroup[0];
+                  return (
+                    <MapAnnotation
+                      missionaries={missionaries}
+                      coordSplit={coordSplit}
+                      idx={idx}
+                      key={idx * 10}
+                    />
+                  );
+                }
+              )}
+            </>
+          ) : null}
         </ZoomableGroup>
       </ComposableMap>
     </div>

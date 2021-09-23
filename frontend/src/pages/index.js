@@ -2,12 +2,14 @@ import React from 'react';
 import fs from 'fs';
 
 import MapChart from '../components/map-chart';
+import NeedsContent from '../components/needs-content';
 import { getRequest } from '../../util/api';
 
 import { Carousel } from 'react-responsive-carousel';
 
 export default function IndexPage(props) {
   const { mapContent, orgContent, cmsURL, map, translation } = props;
+
   return (
     <>
       <div className="index">
@@ -29,24 +31,28 @@ export default function IndexPage(props) {
           <h1 className="index__orgs-header">
             {translation.index.supportedOrgsHeader}
           </h1>
-          <Carousel
-            plugins={['arrows']}
-            className="index__orgs-carousel"
-            dynamicHeight={true}
-            infiniteLoop
-            useKeyboardArrows
-            autoPlay
-          >
-            {orgContent.map((org, idx) => (
-              <div className="index__orgs-carousel--card" key={idx * 12}>
-                <img
-                  className="index__orgs-carousel--card---img"
-                  src={`${cmsURL}${org.img.url}`}
-                />
-                <p>{org.name}</p>
-              </div>
-            ))}
-          </Carousel>
+          {orgContent && orgContent.length && orgContent !== undefined ? (
+            <Carousel
+              plugins={['arrows']}
+              className="index__orgs-carousel"
+              dynamicHeight={true}
+              infiniteLoop
+              useKeyboardArrows
+              autoPlay
+            >
+              {orgContent.map((org, idx) => (
+                <div className="index__orgs-carousel--card" key={idx * 12}>
+                  <img
+                    className="index__orgs-carousel--card---img"
+                    src={`${cmsURL}${org.img.url}`}
+                  />
+                  <p>{org.name}</p>
+                </div>
+              ))}
+            </Carousel>
+          ) : (
+            <NeedsContent />
+          )}
         </div>
       </div>
     </>
@@ -78,6 +84,7 @@ export async function getServerSideProps(ctx) {
   const cmsURL = process.env.CMS_URL;
   const file = fs.readFileSync('./public/miscellaneous/world-110m.json');
   const map = JSON.parse(file);
+
   return {
     props: {
       mapContent,

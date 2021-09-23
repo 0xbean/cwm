@@ -7,9 +7,15 @@ const Missionaries = (props) => {
     <div className="supp-mission__missionaries">
       <div className="supp-mission__missionaries-continent">
         <p>{translation.suppMission.searchByContinent}</p>
-        {Object.entries(translation.suppMission.continents).map((continent) => (
-          <Continent continent={continent} missionaries={missionaries} />
-        ))}
+        {Object.entries(translation.suppMission.continents).map(
+          (continent, idx) => (
+            <Continent
+              continent={continent}
+              missionaries={missionaries}
+              key={idx}
+            />
+          )
+        )}
       </div>
       <div className="supp-mission__missionaries-info"></div>
     </div>

@@ -1,22 +1,22 @@
 const Continent = (props) => {
-  const { continent, missionaries } = props;
+  const { continent, missionaries, active } = props;
 
-  let mappedMissionaries = [];
+  // if not sent down through the props, then set active through setState
+  if (active) {
+  }
 
-  missionaries.map((missionary) =>
-    missionary.continent === continent[1]
-      ? mappedMissionaries.push(missionary)
-      : null
-  );
+  const continentValue = continent[1];
 
   return (
-    <div className="continent">
-      <div>
-        <p>{continent[1]}</p>
-        {mappedMissionaries.map((mappedMissionary) => (
-          <p>{mappedMissionary.name}</p>
+    <div className={`continent `}>
+      <p className="continent__name">{continentValue}</p>
+      {missionaries
+        .filter((missionary) => missionary.continent === continentValue)
+        .map((mappedMissionary, idx) => (
+          <p className="continent__missionaries" key={idx}>
+            {mappedMissionary.name}
+          </p>
         ))}
-      </div>
     </div>
   );
 };

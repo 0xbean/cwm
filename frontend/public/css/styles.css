@@ -23,6 +23,9 @@ html {
   @media only screen and (min-width: 56.25em) {
     html {
       font-size: 50%; } }
+  @media only screen and (min-width: 93.75em) {
+    html {
+      font-size: 75%; } }
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
@@ -284,6 +287,15 @@ These are the main fonts in the application that use the korean sans serif font
 .u-padding-right-medium {
   padding-right: 4rem !important; }
 
+.needs-content {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 10rem; }
+
 .translation-slider__container {
   display: flex;
   align-items: center;
@@ -497,7 +509,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; }
+    flex-direction: column;
+    width: 100%; }
     .index__orgs-header {
       display: flex;
       align-self: flex-start; }
