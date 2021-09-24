@@ -42,4 +42,37 @@
       }
     }
   }
+
+  &__missionaries {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10rem;
+
+    &-continent {
+      display: flex;
+      align-items: flex-start;
+      align-self: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      height: 100%;
+      &--header {
+        font-size: 2.5rem;
+
+        @include respond(iphone) {
+          font-size: 1.25rem;
+        }
+
+        @include respond(phone) {
+          font-size: 2rem;
+        }
+
+        @include respond(desktop) {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
 }

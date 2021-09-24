@@ -6,4 +6,16 @@
   flex-direction: column;
   width: 100%;
   margin: 10rem;
+
+  @include respond(iphone) {
+    margin: 2.5rem;
+  }
+
+  @include respond(phone) {
+    margin: 5rem;
+  }
+
+  @include respond(desktop) {
+    margin: 10rem;
+  }
 }

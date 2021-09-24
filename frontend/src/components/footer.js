@@ -1,5 +1,5 @@
 const Footer = (props) => {
-  const { content } = props;
+  const { translation } = props;
 
   return (
     <div className="footer col-md-12 col-sm-12 col-lg-12 col-12">
@@ -8,7 +8,7 @@ const Footer = (props) => {
       </div>
 
       <div className="footer__contact col-md-12 col-sm-12 col-lg-12 col-12">
-        <p className="footer__contact-text">{content.title}</p>
+        <p className="footer__contact-text">{translation.footer.title}</p>
         <p className="footer__contact-text">EMAIL | PHONE | ADDRESS</p>
       </div>
     </div>

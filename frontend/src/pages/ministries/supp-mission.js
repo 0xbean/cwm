@@ -6,7 +6,7 @@ import MapChart from '../../components/map-chart';
 import { getRequest } from '../../../util/api';
 
 export default function SuppMissionaryPage(props) {
-  const { mapContent, map, translation } = props;
+  const { mapContent, map, translation, cmsUrl } = props;
 
   return (
     <>
@@ -39,7 +39,11 @@ export default function SuppMissionaryPage(props) {
         </div>
         <div className="btn">{translation.suppMission.applyButtonText}</div>
         <MapChart mapContent={mapContent} map={map} translation={translation} />
-        <Missionaries missionaries={mapContent} translation={translation} />
+        <Missionaries
+          missionaries={mapContent}
+          translation={translation}
+          cmsUrl={cmsUrl}
+        />
       </div>
     </>
   );
@@ -58,10 +62,12 @@ export async function getServerSideProps(ctx) {
   const mapContent = await getRequest(url);
 
   const file = fs.readFileSync('./public/miscellaneous/world-110m.json');
+  const cmsUrl = process.env.CMS_URL;
   const map = JSON.parse(file);
   return {
     props: {
       mapContent,
+      cmsUrl,
       map,
     },
   };

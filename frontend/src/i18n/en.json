@@ -63,7 +63,10 @@
       "europe": "Europe",
       "northAmerica": "North America",
       "southAmerica": "South America"
-    }
+    },
+    "prayerRequests": "Prayer Requests",
+    "photos": "Photos",
+    "letters": "Letters"
   },
   "suppOrg": {
     "mainButton": "Apply for Organization Support",

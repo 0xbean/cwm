@@ -1,7 +1,8 @@
 const UnderConstructionPage = () => {
   return (
-    <div className="container row col-md-12">
+    <div className="under-construction">
       <h1>Hello! Sorry, this page is still under construction!</h1>
+      <p>Come back another time and hopefully this will be finished 😅😅</p>
     </div>
   );
 };
