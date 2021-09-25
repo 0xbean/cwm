@@ -72,6 +72,22 @@
     "mainButton": "Apply for Organization Support",
     "visitWebsite": "Visit Website"
   },
+  "stm": {
+    "mainHeader": "Why Short Term Missions?",
+    "mainBody": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Malesuada nunc vel risus commodo. Ultrices eros in cursus turpis massa tincidunt dui ut. Egestas dui id ornare arcu odio ut. Bibendum arcu vitae elementum curabitur vitae nunc sed.",
+    "upcomingTrips": "Upcoming Trips",
+    "downloadAppButton": "Download Application",
+    "searchByContinent": "Search by Continent:",
+    "continents": {
+      "africa": "Africa",
+      "asia": "Asia",
+      "australia": "Australia",
+      "europe": "Europe",
+      "northAmerica": "North America",
+      "southAmerica": "South America"
+    },
+    "photos": "Photos"
+  },
   "careNet": {
     "header": "About",
     "body": "CareNet is a network between Bethel small groups and missionaries supported by Bethel where each small group is assigned to a particular missionary. It is to promote interest and to cultivate a missional mind through sharing the news of the mission fields and supporting missionaries with prayer and care.",

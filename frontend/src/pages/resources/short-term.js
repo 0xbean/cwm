@@ -1,4 +1,4 @@
-export default function ShortTermPage() {
+export default function ShortTermTrainingPage() {
   return (
     <>
       <div className="test">Hello</div>

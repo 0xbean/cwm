@@ -1,0 +1,78 @@
+.supp-mission {
+  display: flex;
+  height: 66%;
+  width: 90%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__definitions {
+    margin: 6rem 0 6rem 0;
+    display: flex;
+    width: 60%;
+    align-self: center;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    &-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+
+      @include respond(iphone) {
+        flex-direction: column;
+      }
+
+      @include respond(phone) {
+        flex-direction: column;
+      }
+
+      @include respond(desktop) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+
+      & > h1 {
+        text-align: start;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__missionaries {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10rem;
+
+    &-continent {
+      display: flex;
+      align-items: flex-start;
+      align-self: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      height: 100%;
+      &--header {
+        font-size: 2.5rem;
+
+        @include respond(iphone) {
+          font-size: 1.25rem;
+        }
+
+        @include respond(phone) {
+          font-size: 2rem;
+        }
+
+        @include respond(desktop) {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
