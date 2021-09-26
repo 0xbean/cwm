@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Continent from './continent';
+import MissionaryContinent from './missionary-continent';
 import MissionaryInfo from './missionary-info';
 
 const Missionaries = (props) => {
@@ -23,7 +23,7 @@ const Missionaries = (props) => {
         </p>
         {Object.entries(translation.suppMission.continents).map(
           (continent, idx) => (
-            <Continent
+            <MissionaryContinent
               continent={continent}
               missionaries={missionaries}
               active={active}

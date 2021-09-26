@@ -88,3 +88,21 @@ export function getIterable(array, key, childKey) {
 
   return iterable;
 }
+
+export function locationBuilder(city, state, country) {
+  let area = '';
+
+  if (city) {
+    area += `${city}, `;
+  }
+
+  if (state) {
+    area += `${state}`;
+  }
+
+  if (!state) {
+    area += `${country}`;
+  }
+
+  return area;
+}

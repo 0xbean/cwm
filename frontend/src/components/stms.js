@@ -1,18 +1,18 @@
 import { useState } from 'react';
 
-import Continent from './continent';
+import STMContinent from './stm-continent';
 import STMInfo from './stm-info';
 
 const STMs = (props) => {
-  const { selectedMissionary, missionaries, translation, cmsUrl } = props;
+  const { selectedMissions, stms, translation, cmsUrl } = props;
 
   const [active, setActive] = useState({
-    activeContinent: selectedMissionary ? selectedMissionary.continent : '',
-    className: selectedMissionary ? 'continent__active' : '',
+    activeContinent: selectedMissions ? selectedMissions.continent : '',
+    className: selectedMissions ? 'continent__active' : '',
   });
   const [activeSub, setActiveSub] = useState({
-    activeMissionary: selectedMissionary ? selectedMissionary : null,
-    className: selectedMissionary ? 'continent__active-sub' : '',
+    activeMissionary: selectedMissions ? selectedMissions : null,
+    className: selectedMissions ? 'continent__active-sub' : '',
   });
 
   return (
@@ -23,9 +23,9 @@ const STMs = (props) => {
         </p>
         {Object.entries(translation.suppMission.continents).map(
           (continent, idx) => (
-            <Continent
+            <STMContinent
               continent={continent}
-              missionaries={missionaries}
+              stms={stms}
               active={active}
               setActive={setActive}
               activeSub={activeSub}

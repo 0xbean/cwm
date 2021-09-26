@@ -1,4 +1,4 @@
-const Continent = (props) => {
+const MissionaryContinent = (props) => {
   const {
     continent,
     missionaries,
@@ -59,4 +59,4 @@ const Continent = (props) => {
   );
 };
 
-export default Continent;
+export default MissionaryContinent;

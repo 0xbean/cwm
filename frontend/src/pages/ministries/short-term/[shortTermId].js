@@ -1,21 +1,19 @@
 import fs from 'fs';
 import { useRouter } from 'next/router';
 
-import Missionaries from '../../../components/missionaries';
+import STMs from '../../../components/stms';
 import MapChart from '../../../components/map-chart';
 import { getRequest } from '../../../../util/api';
 
 export default function SuppMissionaryPage(props) {
   const { mapContent, map, translation, cmsUrl } = props;
   const router = useRouter();
-  const { missionaryId } = router.query;
+  const { shortTermId } = router.query;
 
-  let selectedMissionary = null;
+  let selectedMissions = null;
 
-  if (missionaryId) {
-    selectedMissionary = mapContent.find(
-      (missionary) => missionary.id == missionaryId
-    );
+  if (shortTermId) {
+    selectedMissions = mapContent.find((stm) => stm.id == shortTermId);
   }
 
   return (
@@ -49,9 +47,9 @@ export default function SuppMissionaryPage(props) {
         </div>
         <div className="btn">{translation.suppMission.applyButtonText}</div>
         <MapChart mapContent={mapContent} map={map} translation={translation} />
-        <Missionaries
-          selectedMissionary={selectedMissionary}
-          missionaries={mapContent}
+        <STMs
+          selectedMissions={selectedMissions}
+          stms={mapContent}
           translation={translation}
           cmsUrl={cmsUrl}
         />
@@ -61,7 +59,7 @@ export default function SuppMissionaryPage(props) {
 }
 
 export async function getServerSideProps(ctx) {
-  let url = `${process.env.CMS_URL}/missionaries`;
+  let url = `${process.env.CMS_URL}/short-term-missions`;
   if (ctx) {
     if (ctx.locale) {
       url += `?_locale=${ctx.locale}`;
