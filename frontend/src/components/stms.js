@@ -11,14 +11,14 @@ const STMs = (props) => {
     className: selectedMissions ? 'continent__active' : '',
   });
   const [activeSub, setActiveSub] = useState({
-    activeMissionary: selectedMissions ? selectedMissions : null,
+    entity: selectedMissions ? selectedMissions : null,
     className: selectedMissions ? 'continent__active-sub' : '',
   });
 
   return (
-    <div className="supp-mission__missionaries col-md-12" id="information">
-      <div className="supp-mission__missionaries-continent col-md-3">
-        <p className="supp-mission__missionaries-continent--header">
+    <div className="stm__stms col-md-12" id="information">
+      <div className="stm__stms-continent col-md-3">
+        <p className="stm__stms-continent--header">
           {translation.suppMission.searchByContinent}
         </p>
         {Object.entries(translation.suppMission.continents).map(
@@ -35,7 +35,7 @@ const STMs = (props) => {
           )
         )}
       </div>
-      <div className="supp-mission__missionaries-info col-md-9">
+      <div className="stm__stms-info col-md-9">
         {activeSub.activeMissionary ? (
           <STMInfo
             activeSub={activeSub}

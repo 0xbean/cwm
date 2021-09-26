@@ -1,19 +1,13 @@
-const MissionaryContinent = (props) => {
-  const {
-    continent,
-    missionaries,
-    setActive,
-    active,
-    setActiveSub,
-    activeSub,
-  } = props;
+const Continent = (props) => {
+  const { continent, entities, setActive, active, setActiveSub, activeSub } =
+    props;
 
   const continentValue = continent[1];
 
   const mainActive =
     continentValue === active.activeContinent ? active.className : '';
-  const filteredMissionaries = missionaries.filter(
-    (missionary) => missionary.continent === continentValue
+  const filteredEntities = entities.filter(
+    (entity) => entity.continent === continentValue
   );
 
   return (
@@ -31,26 +25,26 @@ const MissionaryContinent = (props) => {
         {`${mainActive ? ' - ' : ''}${continentValue}`}
       </p>
       {mainActive
-        ? filteredMissionaries.map((mappedMissionary, idx) => {
+        ? filteredEntities.map((mappedEntity, idx) => {
             let className = '';
 
-            if (activeSub.activeMissionary) {
-              if (mappedMissionary.id === activeSub.activeMissionary.id) {
+            if (activeSub.entity) {
+              if (mappedEntity.id === activeSub.entity.id) {
                 className = activeSub.className;
               }
             }
             return (
               <p
-                className={`continent__missionaries ${className}`}
+                className={`continent__entities ${className}`}
                 onClick={() =>
                   setActiveSub({
-                    activeMissionary: mappedMissionary,
+                    entity: mappedEntity,
                     className: 'continent__active-sub',
                   })
                 }
                 key={idx}
               >
-                {mappedMissionary.name}
+                {mappedEntity.name}
               </p>
             );
           })
@@ -59,4 +53,4 @@ const MissionaryContinent = (props) => {
   );
 };
 
-export default MissionaryContinent;
+export default Continent;

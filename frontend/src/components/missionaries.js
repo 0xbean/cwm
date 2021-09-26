@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import MissionaryContinent from './missionary-continent';
+import Continent from './continent';
 import MissionaryInfo from './missionary-info';
 
 const Missionaries = (props) => {
@@ -11,7 +11,7 @@ const Missionaries = (props) => {
     className: selectedMissionary ? 'continent__active' : '',
   });
   const [activeSub, setActiveSub] = useState({
-    activeMissionary: selectedMissionary ? selectedMissionary : null,
+    entity: selectedMissionary ? selectedMissionary : null,
     className: selectedMissionary ? 'continent__active-sub' : '',
   });
 
@@ -23,9 +23,9 @@ const Missionaries = (props) => {
         </p>
         {Object.entries(translation.suppMission.continents).map(
           (continent, idx) => (
-            <MissionaryContinent
+            <Continent
               continent={continent}
-              missionaries={missionaries}
+              entities={missionaries}
               active={active}
               setActive={setActive}
               activeSub={activeSub}
@@ -36,7 +36,7 @@ const Missionaries = (props) => {
         )}
       </div>
       <div className="supp-mission__missionaries-info col-md-9">
-        {activeSub.activeMissionary ? (
+        {activeSub.entity ? (
           <MissionaryInfo
             activeSub={activeSub}
             cmsUrl={cmsUrl}

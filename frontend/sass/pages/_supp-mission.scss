@@ -8,7 +8,7 @@
   flex-direction: column;
 
   &__definitions {
-    margin: 6rem 0 6rem 0;
+    margin: 6rem 0 3rem 0;
     display: flex;
     width: 60%;
     align-self: center;
@@ -20,6 +20,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: row;
+      margin-bottom: 3rem;
 
       @include respond(iphone) {
         flex-direction: column;
@@ -36,9 +37,12 @@
         flex-direction: row;
       }
 
-      & > h1 {
+      &--header {
+        display: flex;
+        align-self: flex-start;
         text-align: start;
         white-space: nowrap;
+        margin-right: 2rem;
       }
     }
   }
@@ -59,7 +63,7 @@
       flex-direction: column;
       height: 100%;
       &--header {
-        font-size: 2.5rem;
+        font-size: 2rem;
 
         @include respond(iphone) {
           font-size: 1.25rem;
@@ -70,7 +74,7 @@
         }
 
         @include respond(desktop) {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
       }
     }

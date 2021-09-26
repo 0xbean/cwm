@@ -22,16 +22,16 @@ const STMInfo = (props) => {
   }
 
   return (
-    <div className="missionary-info">
-      <div className="missionary-info__bio">
-        <div className="missionary-info__bio-profile">
+    <div className="stm-info">
+      <div className="stm-info__bio">
+        <div className="stm-info__bio-profile">
           {missionary.img ? (
             <img
-              className="missionary-info__bio-profile--img"
+              className="stm-info__bio-profile--img"
               src={`${cmsUrl}${missionary.img.formats.small.url}`}
             />
           ) : null}
-          <div className="missionary-info__bio-profile--text">
+          <div className="stm-info__bio-profile--text">
             <h2>
               {missionary.name}
               <span>{missionary.title}</span>
@@ -42,14 +42,14 @@ const STMInfo = (props) => {
           </div>
         </div>
         <h3>{translation.suppMission.prayerRequests}</h3>
-        <p className="missionary-info__bio-prayer-requests">
+        <p className="stm-info__bio-prayer-requests">
           {missionary.prayer_requests}
         </p>
         <h3>{translation.suppMission.photos}</h3>
         {missionary.imgs.length ? (
           <Carousel
             plugins={['arrows']}
-            className="missionary-info__bio-carousel"
+            className="stm-info__bio-carousel"
             dynamicHeight={true}
             infiniteLoop
             useKeyboardArrows
@@ -57,7 +57,7 @@ const STMInfo = (props) => {
           >
             {missionary.imgs.map((img, idx) => (
               <img
-                className="missionary-info__bio-carousel--img"
+                className="stm-info__bio-carousel--img"
                 src={`${cmsUrl}${img.url}`}
                 key={idx}
               />

@@ -5,7 +5,7 @@ import NeedsContent from './needs-content';
 const MissionaryInfo = (props) => {
   const { activeSub, cmsUrl, translation } = props;
 
-  const missionary = activeSub.activeMissionary;
+  const missionary = activeSub.entity;
 
   let area = '';
 

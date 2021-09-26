@@ -13,26 +13,26 @@ export default function SuppMissionaryPage(props) {
       <div className="supp-mission">
         <div className="supp-mission__definitions">
           <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
-            <h1 className="col-md-4 col-sm-6 col-6">
+            <h1 className="supp-mission__definitions-block--header col-md-4 col-sm-6 col-6">
               {translation.suppMission.sentMissionHeader}
             </h1>
-            <p className="col-md-8 col-sm-6 col-6">
+            <p className="supp-mission__definitions-block--text col-md-8 col-sm-6 col-6">
               {translation.suppMission.sentMissionText}
             </p>
           </div>
           <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
-            <h1 className="col-md-4 col-sm-6 col-6">
+            <h1 className="supp-mission__definitions-block--header col-md-4 col-sm-6 col-6">
               {translation.suppMission.seniorMissionHeader}
             </h1>
-            <p className="col-md-8 col-sm-6 col-6">
+            <p className="supp-mission__definitions-block--text col-md-8 col-sm-6 col-6">
               {translation.suppMission.seniorMissionText}
             </p>
           </div>
           <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
-            <h1 className="col-md-4 col-sm-6 col-6">
+            <h1 className="supp-mission__definitions-block--header col-md-4 col-sm-6 col-6">
               {translation.suppMission.associateMissionHeader}
             </h1>
-            <p className="col-md-8 col-sm-6 col-6">
+            <p className="supp-mission__definitions-block--text col-md-8 col-sm-6 col-6">
               {translation.suppMission.associateMissionText}
             </p>
           </div>

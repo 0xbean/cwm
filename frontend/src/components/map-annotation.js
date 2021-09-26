@@ -9,11 +9,8 @@ const MapAnnotation = (props) => {
       subject={[coordSplit[1], coordSplit[0]]}
       dx={-20}
       dy={-10}
-      curve={-1.75}
       connectorProps={{
-        stroke: '#5BA8A0',
-        strokeWidth: 1,
-        strokeLinecap: 'round',
+        strokeWidth: 0,
       }}
       className="map-chart__annotation"
       id={`${idx}_map-chart__annotation`}
@@ -28,7 +25,12 @@ const MapAnnotation = (props) => {
           x="-100"
           y="-50"
         />
-        <foreignObject x="-120" y="-115" width="125" height="115">
+        <foreignObject
+          x="-120"
+          y={missionaries.length > 3 ? -115 : missionaries.length * -57.5}
+          width="125"
+          height={missionaries.length > 3 ? 115 : missionaries.length * 57.5}
+        >
           <div className="map-entity">
             {missionaries.map((missionary, idx) => (
               <MapEntity missionary={missionary} key={idx} />

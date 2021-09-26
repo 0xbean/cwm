@@ -6,7 +6,7 @@
 
   &__name {
     cursor: pointer;
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: 300;
 
     @include respond(iphone) {
@@ -18,11 +18,11 @@
     }
 
     @include respond(desktop) {
-      font-size: 2.25rem;
+      font-size: 1.5rem;
     }
   }
 
-  &__missionaries {
+  &__entities {
     cursor: pointer;
     font-size: 1.25rem;
     font-weight: 300;
