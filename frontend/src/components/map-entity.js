@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const MapEntity = (props) => {
   const { entity } = props;
@@ -10,22 +11,21 @@ const MapEntity = (props) => {
     location = `${entity.country}`;
   }
 
-  console.log(entity);
   return (
     <>
       <div className="map-entity__card">
         <h1 className="map-entity__card-header">{entity.name}</h1>
         <p className="map-entity__card-location">{location}</p>
-        <a
-          className="map-entity__card-link"
+        <Link
           href={
             entity.button_text
               ? `/ministries/short-term/${entity.id}/#information`
               : `/ministries/supp-mission/${entity.id}/#information`
           }
+          passHref
         >
-          Learn More
-        </a>
+          <a className="map-entity__card-link">Learn More</a>
+        </Link>
       </div>
     </>
   );

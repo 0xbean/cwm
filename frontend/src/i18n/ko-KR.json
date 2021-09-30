@@ -39,22 +39,22 @@
     "supportedOrgsHeader": "Organizations We Support"
   },
   "about": {
-    "header": "Vision Statement",
-    "visionText": "Develop and implement a ministry to carry out the Lord's Great Commission by preaching the Gospel of Jesus Christ to other cultures in the United States and abroad.",
+    "header": "비전",
+    "visionText": "미국 내와 해외의 다른 문화권에 예수 그리스도의 복음을 전함으로 주님의 지상명령을 실천하기 위한 사역을 개발하고 시행한다.",
     "teamHeader": "Our Team",
-    "director": "Director",
-    "trustees": "Board of Trustees",
-    "committee": "Executive Committee",
-    "committeeRoles": "Clerk, Secretary, Treasurer, and Other Team Members"
+    "director": "센터장",
+    "trustees": "이사회",
+    "committee": "실행위원회",
+    "committeeRoles": "서기, 총무, 회계, 팀원들"
   },
   "suppMission": {
-    "sentMissionHeader": "Sent Missionary",
-    "sentMissionText": "Bethel Church send out, after the selection process set by the church, long-term missionaries who will serve for four or more years in the mission fields or mission organizations and short-term missionaries who will serve from six months to four years. Today, Bethel has four long-term missionary families in three mission fields.",
-    "seniorMissionHeader": "Senior Missionary",
-    "seniorMissionText": "A senior missionary is a short-term missionary with age over 55 who will serve within two years at the mission field. Currently, Bethel has sent out two senior missionary families to two regions.",
-    "associateMissionHeader": "Associate Missionary",
-    "associateMissionText": "We support missionaries, including local ministers, who are sent through accredited mission agencies or churches with a strategy and direction that meets the mission policy of Bethel. Today, Bethel support 46 associate missionary families throughout the world.",
-    "applyButtonText": "Apply for Mission Support",
+    "sentMissionHeader": "파송 선교사",
+    "sentMissionText": "벧엘 교회는 교회가 정한 선발과정을 거친 후에 4년 이상 선교지나 선교단체에서 사역하는 장기선교사와 6개월에서 4년 이내의 사역을 하는 단기선교사를 파송한다. 현재 네 사역지에 네 선교사 가정을 파송하여 후원하고 있다.",
+    "seniorMissionHeader": "협력 선교사",
+    "seniorMissionText": "교회가 인정하는 선교기관, 혹은 교회를 통하여 파송된 선교사로서 본 교회의 선교정책에 맞는 전략과 방향성을 가지고 본 교회와의 협력과 후원을 필요로 하는 현지인 사역자를 포함한 선교사를 후원한다. 현재 벧엘 교회는 전세계에 모두 53 협력선교사 가정들을 후원하고 있다.",
+    "associateMissionHeader": "시니어미션 선교사",
+    "associateMissionText": "시니어미션 선교사는 55세 이상의 단기선교사로 선교지에서 2년 이내에 선교활동을 수행한다. 현재 벧엘은 두 가정의 시니어미션 선교사를 두 지역에 파송하고 있다.",
+    "applyButtonText": "선교사 후원 신청",
     "searchByContinent": "Search by Continent:",
     "continents": {
       "africa": "Africa",
@@ -71,6 +71,23 @@
   "suppOrg": {
     "mainButton": "Apply for Organization Support",
     "visitWebsite": "Visit Website"
+  },
+  "stm": {
+    "mainHeader": "Why Short Term Missions?",
+    "mainBody": "6개월 이내의 짧은 기간 동안 선교사역, 훈련 및 정탐을 위하여 하는 사역이다. 단기 선교사역을 통해 지향하는 목적은 현지 선교사와 협력하여 선교사역을 지원하며, 참가자들이 선교지를 경험하여 선교에 대한 관심을 고취하고 선교에 대한 훈련을 받으며, 타 문화권과의 접촉을 통하여 선교의 이해를 넓히고 세계를 품는 그리스도인이 되게 하는 것이다. 벧엘 교회는 의료선교, 여름 단기선교, 겨울 단기 선교로 매해 여러 지역에 단기선교 팀들을 보내고 있다",
+    "upcomingTrips": "Upcoming Trips",
+    "downloadAppButton": "Download Application",
+    "previousTrips": "Previous Trips",
+    "searchByContinent": "Search by Continent:",
+    "continents": {
+      "africa": "Africa",
+      "asia": "Asia",
+      "australia": "Australia",
+      "europe": "Europe",
+      "northAmerica": "North America",
+      "southAmerica": "South America"
+    },
+    "photos": "Photos"
   },
   "careNet": {
     "header": "About",

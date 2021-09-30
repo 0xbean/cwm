@@ -64,7 +64,7 @@ export function heroImage(pathname) {
         case 'senior-missions':
           image = '/images/senior-missions-training.png';
           break;
-        case 'short-term':
+        case 'short-term-training':
           image = '/images/stm-training.png';
           break;
       }

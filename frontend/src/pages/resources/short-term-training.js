@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Router from 'next/router';
 
-export default function PerspectivesPage() {
+export default function ShortTermTrainingPage() {
   useEffect(() => {
     Router.push('/under-construction');
   });
