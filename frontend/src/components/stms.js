@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import STMContinent from './stm-continent';
+import Continent from './continent';
 import STMInfo from './stm-info';
 
 const STMs = (props) => {
@@ -23,9 +23,9 @@ const STMs = (props) => {
         </p>
         {Object.entries(translation.suppMission.continents).map(
           (continent, idx) => (
-            <STMContinent
+            <Continent
               continent={continent}
-              stms={stms}
+              entities={stms}
               active={active}
               setActive={setActive}
               activeSub={activeSub}
@@ -36,7 +36,7 @@ const STMs = (props) => {
         )}
       </div>
       <div className="stm__stms-info col-md-9">
-        {activeSub.activeMissionary ? (
+        {activeSub.entity ? (
           <STMInfo
             activeSub={activeSub}
             cmsUrl={cmsUrl}

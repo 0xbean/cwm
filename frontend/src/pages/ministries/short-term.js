@@ -11,7 +11,6 @@ export default function ShortTermPage(props) {
   const { translation, mapContent, map, cmsUrl } = props;
 
   const upcomingTrips = mapContent.map((stm) => {
-    // 3 cases fr
     if (
       (stm.city && stm.country) ||
       stm.country ||

@@ -551,20 +551,8 @@ These are the main fonts in the application that use the korean sans serif font
       .stm-info__bio-profile--text > h4 {
         margin-bottom: 1rem;
         font-weight: 300; }
-  .stm-info__bio-prayer-requests {
-    white-space: pre-line; }
-  .stm-info__bio-document {
-    color: #5ba8a0;
-    text-decoration: none;
-    font-size: 1.25rem;
-    transition: color 0.4s ease-in-out; }
-    .stm-info__bio-document:hover {
-      color: #386669;
-      text-decoration: underline; }
-    .stm-info__bio-document:visited, .stm-info__bio-document:active {
-      color: #5ba8a0; }
   .stm-info__bio-carousel {
-    width: 100%; }
+    width: 35%; }
     .stm-info__bio-carousel > img {
       max-height: 10rem !important;
       max-width: 10rem !important;

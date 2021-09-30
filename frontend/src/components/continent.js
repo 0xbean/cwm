@@ -1,3 +1,5 @@
+import { locationBuilder } from '../../util/helper';
+
 const Continent = (props) => {
   const { continent, entities, setActive, active, setActiveSub, activeSub } =
     props;
@@ -44,7 +46,13 @@ const Continent = (props) => {
                 }
                 key={idx}
               >
-                {mappedEntity.name}
+                {mappedEntity.name
+                  ? mappedEntity.name
+                  : locationBuilder(
+                      mappedEntity.city,
+                      mappedEntity.state,
+                      mappedEntity.country
+                    )}
               </p>
             );
           })

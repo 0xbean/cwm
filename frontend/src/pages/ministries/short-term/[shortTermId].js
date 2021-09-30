@@ -1,11 +1,14 @@
 import fs from 'fs';
 import { useRouter } from 'next/router';
 
-import STMs from '../../../components/stms';
 import MapChart from '../../../components/map-chart';
-import { getRequest } from '../../../../util/api';
+import NeedsContent from '../../../components/needs-content';
+import STMs from '../../../components/stms';
 
-export default function SuppMissionaryPage(props) {
+import { getRequest } from '../../../../util/api';
+import { locationBuilder } from '../../../../util/helper';
+
+export default function ShortTermPage(props) {
   const { mapContent, map, translation, cmsUrl } = props;
   const router = useRouter();
   const { shortTermId } = router.query;
@@ -16,36 +19,44 @@ export default function SuppMissionaryPage(props) {
     selectedMissions = mapContent.find((stm) => stm.id == shortTermId);
   }
 
+  const upcomingTrips = mapContent.map((stm) => {
+    if (
+      (stm.city && stm.country) ||
+      stm.country ||
+      (stm.city && stm.state && stm.start_date && stm.end_date)
+    ) {
+      return stm;
+    } else {
+      return;
+    }
+  });
+
   return (
     <>
-      <div className="supp-mission">
-        <div className="supp-mission__definitions">
-          <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
-            <h1 className="col-md-4 col-sm-6 col-6">
-              {translation.suppMission.sentMissionHeader}
-            </h1>
-            <p className="col-md-8 col-sm-6 col-6">
-              {translation.suppMission.sentMissionText}
-            </p>
-          </div>
-          <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
-            <h1 className="col-md-4 col-sm-6 col-6">
-              {translation.suppMission.seniorMissionHeader}
-            </h1>
-            <p className="col-md-8 col-sm-6 col-6">
-              {translation.suppMission.seniorMissionText}
-            </p>
-          </div>
-          <div className="supp-mission__definitions-block col-md-12 col-sm-12 col-12">
-            <h1 className="col-md-4 col-sm-6 col-6">
-              {translation.suppMission.associateMissionHeader}
-            </h1>
-            <p className="col-md-8 col-sm-6 col-6">
-              {translation.suppMission.associateMissionText}
-            </p>
-          </div>
+      <div className="stm">
+        <div className="stm__main">
+          <h1>{translation.stm.mainHeader}</h1>
+          <p>{translation.stm.mainBody}</p>
         </div>
-        <div className="btn">{translation.suppMission.applyButtonText}</div>
+        <div className="stm__trips">
+          <h1>{translation.stm.upcomingTrips}</h1>
+          {upcomingTrips ? (
+            upcomingTrips.map((stm, idx) => (
+              <div className="stm__trips-entity" key={idx}>
+                <p>{locationBuilder(stm.city, stm.state, stm.country)}</p>
+                <p>{`${new Date(
+                  stm.start_date
+                ).toLocaleDateString()} - ${new Date(
+                  stm.end_date
+                ).toLocaleDateString()}`}</p>
+              </div>
+            ))
+          ) : (
+            <NeedsContent />
+          )}
+        </div>
+        <div className="btn">{translation.stm.downloadAppButton}</div>
+        <h1 className="stm__header">{translation.stm.previousTrips}</h1>
         <MapChart mapContent={mapContent} map={map} translation={translation} />
         <STMs
           selectedMissions={selectedMissions}

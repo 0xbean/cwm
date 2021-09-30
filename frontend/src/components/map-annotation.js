@@ -3,7 +3,7 @@ import { Annotation } from 'react-simple-maps';
 import MapEntity from './map-entity';
 
 const MapAnnotation = (props) => {
-  const { missionaries, coordSplit, idx } = props;
+  const { entities, coordSplit, idx } = props;
   return (
     <Annotation
       subject={[coordSplit[1], coordSplit[0]]}
@@ -27,13 +27,13 @@ const MapAnnotation = (props) => {
         />
         <foreignObject
           x="-120"
-          y={missionaries.length > 3 ? -115 : missionaries.length * -57.5}
+          y={entities.length > 3 ? -115 : entities.length * -57.5}
           width="125"
-          height={missionaries.length > 3 ? 115 : missionaries.length * 57.5}
+          height={entities.length > 3 ? 115 : entities.length * 57.5}
         >
           <div className="map-entity">
-            {missionaries.map((missionary, idx) => (
-              <MapEntity missionary={missionary} key={idx} />
+            {entities.map((entity, idx) => (
+              <MapEntity entity={entity} key={idx} />
             ))}
           </div>
         </foreignObject>
