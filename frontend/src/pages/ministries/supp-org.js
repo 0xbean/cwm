@@ -42,7 +42,7 @@ export default function SuppOrgPage(props) {
 }
 
 export async function getServerSideProps(ctx) {
-  let url = `${process.env.CMS_URL}/organizations`;
+  let url = `${process.env.API_URL}/organizations`;
 
   if (ctx) {
     if (ctx.locale) {

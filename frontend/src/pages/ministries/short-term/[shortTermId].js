@@ -70,7 +70,7 @@ export default function ShortTermPage(props) {
 }
 
 export async function getServerSideProps(ctx) {
-  let url = `${process.env.CMS_URL}/short-term-missions`;
+  let url = `${process.env.API_URL}/short-term-missions`;
   if (ctx) {
     if (ctx.locale) {
       url += `?_locale=${ctx.locale}`;

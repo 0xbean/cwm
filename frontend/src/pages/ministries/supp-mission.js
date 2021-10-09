@@ -50,7 +50,7 @@ export default function SuppMissionaryPage(props) {
 }
 
 export async function getServerSideProps(ctx) {
-  let url = `${process.env.CMS_URL}/missionaries`;
+  let url = `${process.env.API_URL}/missionaries`;
   if (ctx) {
     if (ctx.locale) {
       url += `?_locale=${ctx.locale}`;

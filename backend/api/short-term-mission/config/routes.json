@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/short-term-missions",
+      "path": "/api/short-term-missions",
       "handler": "short-term-mission.find",
       "config": {
         "policies": []
@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/short-term-missions/count",
+      "path": "/api/short-term-missions/count",
       "handler": "short-term-mission.count",
       "config": {
         "policies": []
@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/short-term-missions/:id",
+      "path": "/api/short-term-missions/:id",
       "handler": "short-term-mission.findOne",
       "config": {
         "policies": []
@@ -26,7 +26,7 @@
     },
     {
       "method": "POST",
-      "path": "/short-term-missions",
+      "path": "/api/short-term-missions",
       "handler": "short-term-mission.create",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/short-term-missions/:id",
+      "path": "/api/short-term-missions/:id",
       "handler": "short-term-mission.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/short-term-missions/:id",
+      "path": "/api/short-term-missions/:id",
       "handler": "short-term-mission.delete",
       "config": {
         "policies": []

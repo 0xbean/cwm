@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/organizations",
+      "path": "/api/organizations",
       "handler": "organization.find",
       "config": {
         "policies": []
@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/organizations/count",
+      "path": "/api/organizations/count",
       "handler": "organization.count",
       "config": {
         "policies": []
@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/organizations/:id",
+      "path": "/api/organizations/:id",
       "handler": "organization.findOne",
       "config": {
         "policies": []
@@ -26,7 +26,7 @@
     },
     {
       "method": "POST",
-      "path": "/organizations",
+      "path": "/api/organizations",
       "handler": "organization.create",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/organizations/:id",
+      "path": "/api/organizations/:id",
       "handler": "organization.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/organizations/:id",
+      "path": "/api/organizations/:id",
       "handler": "organization.delete",
       "config": {
         "policies": []

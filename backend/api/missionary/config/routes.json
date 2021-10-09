@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/missionaries",
+      "path": "/api/missionaries",
       "handler": "missionary.find",
       "config": {
         "policies": []
@@ -10,7 +10,7 @@
     },
     {
       "method": "GET",
-      "path": "/missionaries/count",
+      "path": "/api/missionaries/count",
       "handler": "missionary.count",
       "config": {
         "policies": []
@@ -18,7 +18,7 @@
     },
     {
       "method": "GET",
-      "path": "/missionaries/:id",
+      "path": "/api/missionaries/:id",
       "handler": "missionary.findOne",
       "config": {
         "policies": []
@@ -26,7 +26,7 @@
     },
     {
       "method": "POST",
-      "path": "/missionaries",
+      "path": "/api/missionaries",
       "handler": "missionary.create",
       "config": {
         "policies": []
@@ -34,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/missionaries/:id",
+      "path": "/api/missionaries/:id",
       "handler": "missionary.update",
       "config": {
         "policies": []
@@ -42,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/missionaries/:id",
+      "path": "/api/missionaries/:id",
       "handler": "missionary.delete",
       "config": {
         "policies": []
