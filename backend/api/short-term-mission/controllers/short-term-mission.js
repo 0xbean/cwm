@@ -15,8 +15,8 @@ module.exports = {
 
     const data = await Promise.all(
       stms.map(async (stm) => {
-        const { id, geocode, country, city, state } = stm;
-        if (geocode === null) {
+        const { id, geocode, country, city, state, published_at } = stm;
+        if (geocode === null && published_at !== null) {
           const geocodeResult = await strapi.services[
             "short-term-mission"
           ].mapGeocoder(country, state, city);
@@ -37,6 +37,9 @@ module.exports = {
       }
     });
 
-    return stms;
+    // filter through and only return those that are published:
+    const published_stms = stms.filter((stm) => stm.published_at !== null);
+
+    return published_stms;
   },
 };

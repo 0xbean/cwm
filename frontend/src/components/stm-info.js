@@ -7,7 +7,6 @@ const STMInfo = (props) => {
 
   const stm = activeSub.entity;
 
-  console.log(stm);
   let area = '';
 
   if (stm.city) {

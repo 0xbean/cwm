@@ -69,8 +69,6 @@ export async function getServerSideProps(ctx) {
     url += `?_locale=en`;
   }
 
-  console.log(url);
-
   const mapContent = await getRequest(url);
 
   url = `${process.env.API_URL}/organizations`;

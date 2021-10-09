@@ -15,8 +15,8 @@ module.exports = {
 
     const data = await Promise.all(
       missionaries.map(async (missionary) => {
-        const { id, geocode, country, city, state } = missionary;
-        if (geocode === null) {
+        const { id, geocode, country, city, state, published_at } = missionary;
+        if (geocode === null && published_at !== null) {
           const geocodeResult = await strapi.services.missionary.mapGeocoder(
             country,
             state,
@@ -39,6 +39,11 @@ module.exports = {
       }
     });
 
-    return missionaries;
+    // filter through and only return those that are published:
+    const published_missionaries = missionaries.filter(
+      (missionary) => missionary.published_at !== null
+    );
+
+    return published_missionaries;
   },
 };
