@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "pm2": "pm2 start processes.json --no-daemon",
+    "pm2": "pm2 start ecosystem.config.js --env production",
     "dev": "concurrently \"npm run compile:sass\" \"next dev\"",
     "compile:sass": "node-sass sass/main.scss public/css/styles.css -w",
     "build:sass": "node-sass sass/main.scss public/css/styles.css",
     "build": "npm run build:sass && next build",
-    "start": "next start"
+    "start": "next start",
+    "start:production": "npm run pm2"
   },
   "dependencies": {
     "@brainhubeu/react-carousel": "^2.0.4",
@@ -19,7 +20,7 @@
     "next": "10.0.9",
     "node-sass": "^6.0.1",
     "nprogress": "^0.2.0",
-    "pm2": "^4.5.5",
+    "pm2": "^4.5.6",
     "react": "17.0.1",
     "react-bootstrap": "^2.0.0-beta.6",
     "react-dom": "17.0.1",
