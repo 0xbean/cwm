@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "cwm-frontend",
+      name: "cwm-backend",
       script: "npm",
       args: "start",
       cwd: "./",
