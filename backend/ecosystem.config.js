@@ -4,7 +4,7 @@ module.exports = {
       name: "cwm-backend",
       script: "npm",
       args: "start",
-      cwd: "./",
+      cwd: "./build",
       instances: 1,
       autorestart: true,
       watch: false,

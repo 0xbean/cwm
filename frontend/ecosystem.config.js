@@ -4,7 +4,7 @@ module.exports = {
       name: 'cwm-frontend',
       script: 'npm',
       args: 'start',
-      cwd: './',
+      cwd: './.next',
       instances: 1,
       autorestart: true,
       watch: false,
