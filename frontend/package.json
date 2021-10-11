@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "pm2": "pm2 start ecosystem.config.js -env production",
+    "pm2": "pm2 start ecosystem.config.js",
     "dev": "concurrently \"npm run compile:sass\" \"next dev\"",
     "compile:sass": "node-sass sass/main.scss public/css/styles.css -w",
     "build:sass": "node-sass sass/main.scss public/css/styles.css",
