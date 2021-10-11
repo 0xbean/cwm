@@ -1,0 +1,30 @@
+{
+  "apps": [
+    {
+      "name": "cwm-backend",
+      "script": "npm",
+      "args": "run run-backend",
+      "cwd": "./backend/build",
+      "instances": 1,
+      "autorestart": true,
+      "watch": false,
+      "max_memory_restart": "1G",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name": "cwm-frontend",
+      "script": "npm",
+      "args": "run run-frontend",
+      "cwd": "./frontend/.next",
+      "instances": 1,
+      "autorestart": true,
+      "watch": false,
+      "max_memory_restart": "1G",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
