@@ -20,11 +20,11 @@ const Hero = (props) => {
         </Link>
       </div>
 
-      <Navbar collapseOnSelect expand="lg" className="col-md-12">
+      <Navbar collapseOnSelect expand="lg">
         <Container>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mx-auto">
+            <Nav className="nav__main-links">
               <Link href="/about" locale={router.locale} passHref>
                 <Nav.Link>{translation.header.nav.about.name}</Nav.Link>
               </Link>
@@ -118,7 +118,7 @@ const Hero = (props) => {
                 </Link>
               </NavDropdown>
             </Nav>
-            <Nav>
+            <Nav className="nav__translation-link ms-auto">
               <TranslationSlider router={router} />
             </Nav>
           </Navbar.Collapse>
