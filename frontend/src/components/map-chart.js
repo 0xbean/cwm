@@ -57,8 +57,8 @@ const MapChart = (props) => {
           {mapContent && mapContent !== undefined ? (
             <>
               {getIterable(mapContent, 'geocode', ['lat', 'lng']).map(
-                (missionaryGroup, idx) => {
-                  const coords = missionaryGroup.shift();
+                (entityGroup, idx) => {
+                  const coords = entityGroup.shift();
                   const coordSplit = coords.split(':');
                   return (
                     <MapMarker coordSplit={coordSplit} idx={idx} key={idx} />
@@ -67,13 +67,13 @@ const MapChart = (props) => {
               )}
 
               {getIterable(mapContent, 'geocode', ['lat', 'lng']).map(
-                (missionaryGroup, idx) => {
-                  const coords = missionaryGroup.shift();
+                (entityGroup, idx) => {
+                  const coords = entityGroup.shift();
                   const coordSplit = coords.split(':');
-                  const missionaries = missionaryGroup[0];
+                  const entities = entityGroup[0];
                   return (
                     <MapAnnotation
-                      missionaries={missionaries}
+                      entities={entities}
                       coordSplit={coordSplit}
                       idx={idx}
                       key={idx * 10}

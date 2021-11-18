@@ -71,14 +71,19 @@ h5:lang(ko-KR) {
   font-weight: 500;
   font-style: bold; }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; }
+
 #nprogress .bar {
   background: #3b5284 !important; }
 
 .hidden-link {
   display: none; }
-
-.nav-link {
-  margin: 0 1rem 0 1rem; }
 
 /*
 These are the imports for the main fonts in all of the application that use the serif font.
@@ -380,9 +385,15 @@ These are the main fonts in the application that use the korean sans serif font
       font-size: 0.5rem !important; }
     .map-entity__card-link {
       display: inline-block;
+      color: #c4c4c4;
       padding: 0;
       margin: 0 0.5rem 0.5rem 0.5rem;
-      font-size: 0.5rem; }
+      font-size: 0.5rem;
+      transition: color 0.2s ease-in-out; }
+    .map-entity__card-link:visited, .map-entity__card-link:link {
+      color: #c4c4c4; }
+    .map-entity__card-link:hover, .map-entity__card-link:active {
+      color: #5ba8a0; }
 
 .btn {
   z-index: 1;
@@ -551,20 +562,8 @@ These are the main fonts in the application that use the korean sans serif font
       .stm-info__bio-profile--text > h4 {
         margin-bottom: 1rem;
         font-weight: 300; }
-  .stm-info__bio-prayer-requests {
-    white-space: pre-line; }
-  .stm-info__bio-document {
-    color: #5ba8a0;
-    text-decoration: none;
-    font-size: 1.25rem;
-    transition: color 0.4s ease-in-out; }
-    .stm-info__bio-document:hover {
-      color: #386669;
-      text-decoration: underline; }
-    .stm-info__bio-document:visited, .stm-info__bio-document:active {
-      color: #5ba8a0; }
   .stm-info__bio-carousel {
-    width: 100%; }
+    width: 35%; }
     .stm-info__bio-carousel > img {
       max-height: 10rem !important;
       max-width: 10rem !important;
@@ -580,7 +579,36 @@ nav {
 
 .nav-link {
   width: max-content;
-  white-space: nowrap; }
+  white-space: nowrap;
+  margin: 0 1rem 0 1rem; }
+
+.nav-link:lang(en) {
+  font-family: 'EBGaramond', Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: bold; }
+
+.nav-link:lang(ko-KR) {
+  font-family: 'Korean-EBGaramond', Verdana, sans-serif;
+  font-weight: 500;
+  font-style: bold; }
+
+.nav__main-links {
+  display: flex;
+  align-self: center; }
+
+.nav__translation-link {
+  display: flex;
+  justify-self: flex-end; }
+
+.dropdown-item:lang(en) {
+  font-family: 'EBGaramond', Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: bold; }
+
+.dropdown-item:lang(ko-KR) {
+  font-family: 'Korean-EBGaramond', Verdana, sans-serif;
+  font-weight: 500;
+  font-style: bold; }
 
 .footer {
   display: flex;
@@ -656,7 +684,7 @@ nav {
         flex-direction: row;
         margin: 5rem 0 5rem 0; } }
     .index__welcome-text {
-      margin: 5rem 0 5rem 0; }
+      margin: 5rem 10rem 5rem 10rem; }
     .index__welcome-imgs {
       display: flex;
       align-items: flex-end;

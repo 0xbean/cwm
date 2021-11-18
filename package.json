@@ -5,13 +5,17 @@
   "scripts": {
     "run-dev-backend": "cd backend && npm run strapi dev",
     "run-dev-frontend": "cd frontend && npm run dev",
-    "run-backend": "cd backend && npm run strapi start",
-    "run-frontend": "cd frontend && npm start",
+    "run-backend": "cd backend && npm run start",
+    "run-frontend": "cd frontend && npm run start",
     "dev": "concurrently \"npm run run-dev-frontend\" \"npm run run-dev-backend\"",
     "build": "cd frontend && npm run build && cd .. && cd backend && npm run build",
-    "start": "concurrently \"npm run run-frontend\" \"npm run run-backend\""
+    "start": "concurrently \"npm run run-frontend\" \"npm run run-backend\"",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "postinstall": "npm run install:backend && npm run install:frontend"
   },
   "dependencies": {
-    "concurrently": "^6.2.0"
+    "concurrently": "^6.2.0",
+    "pm2": "^5.1.2"
   }
 }

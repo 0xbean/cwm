@@ -55,9 +55,21 @@
 
     &-link {
       display: inline-block;
+      color: $color-lightest-grey;
       padding: 0;
       margin: 0 0.5rem 0.5rem 0.5rem;
       font-size: 0.5rem;
+      transition: color 0.2s ease-in-out;
+    }
+
+    &-link:visited,
+    &-link:link {
+      color: $color-lightest-grey;
+    }
+
+    &-link:hover,
+    &-link:active {
+      color: $color-teal;
     }
   }
 }

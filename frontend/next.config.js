@@ -6,24 +6,24 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/resources/perspectives',
+        source: '/(.*)/resources/perspectives',
         destination: '/under-construction',
-        permanent: false,
+        permanent: true,
       },
       {
-        source: '/resources/seminars',
+        source: '/(.*)/resources/seminars',
         destination: '/under-construction',
-        permanent: false,
+        permanent: true,
       },
       {
-        source: '/resources/senior-missions',
+        source: '/(.*)/resources/senior-missions',
         destination: '/under-construction',
-        permanent: false,
+        permanent: true,
       },
       {
-        source: '/resources/short-term',
+        source: '/(.*)/resources/short-term-training',
         destination: '/under-construction',
-        permanent: false,
+        permanent: true,
       },
     ];
   },

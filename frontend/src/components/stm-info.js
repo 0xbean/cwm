@@ -1,52 +1,44 @@
-import Carousel from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel';
 
 import NeedsContent from './needs-content';
 
 const STMInfo = (props) => {
   const { activeSub, cmsUrl, translation } = props;
 
-  const missionary = activeSub.activeMissionary;
+  const stm = activeSub.entity;
 
   let area = '';
 
-  if (missionary.city) {
-    area += `${missionary.city}, `;
+  if (stm.city) {
+    area += `${stm.city}, `;
   }
 
-  if (missionary.state) {
-    area += `${missionary.state}`;
+  if (stm.state) {
+    area += `${stm.state}`;
   }
 
-  if (missionary.country && !missionary.city && !missionary.state) {
-    area = missionary.country;
+  if (stm.country && !stm.city && !stm.state) {
+    area = stm.country;
   }
 
   return (
     <div className="stm-info">
       <div className="stm-info__bio">
         <div className="stm-info__bio-profile">
-          {missionary.img ? (
+          {stm.img ? (
             <img
               className="stm-info__bio-profile--img"
-              src={`${cmsUrl}${missionary.img.formats.small.url}`}
+              src={`${cmsUrl}${stm.img.formats.small.url}`}
             />
           ) : null}
           <div className="stm-info__bio-profile--text">
-            <h2>
-              {missionary.name}
-              <span>{missionary.title}</span>
-            </h2>
-            <h3>{area}</h3>
-            <h4>Ministry: {missionary.ministry}</h4>
-            <h4>CareNet: {missionary.carenet}</h4>
+            <h2>{area}</h2>
+            <h3>{stm.missionary_names}</h3>
+            <p>{stm.description}</p>
           </div>
         </div>
-        <h3>{translation.suppMission.prayerRequests}</h3>
-        <p className="stm-info__bio-prayer-requests">
-          {missionary.prayer_requests}
-        </p>
-        <h3>{translation.suppMission.photos}</h3>
-        {missionary.imgs.length ? (
+        <h3>{translation.stm.photos}</h3>
+        {stm.imgs.length ? (
           <Carousel
             plugins={['arrows']}
             className="stm-info__bio-carousel"
@@ -55,7 +47,7 @@ const STMInfo = (props) => {
             useKeyboardArrows
             autoPlay
           >
-            {missionary.imgs.map((img, idx) => (
+            {stm.imgs.map((img, idx) => (
               <img
                 className="stm-info__bio-carousel--img"
                 src={`${cmsUrl}${img.url}`}
@@ -66,21 +58,8 @@ const STMInfo = (props) => {
         ) : (
           <NeedsContent />
         )}
-        <h3>{translation.suppMission.letters}</h3>
-        {missionary.letters.length ? (
-          missionary.letters.map((letter, idx) => (
-            <a
-              className="missionary-info__bio-document"
-              href={`${cmsUrl}${letter.url}`}
-              target="_blank"
-              key={idx * 10}
-            >
-              {letter.name}
-            </a>
-          ))
-        ) : (
-          <NeedsContent />
-        )}
+
+        <div className="btn">{stm.button_text}</div>
       </div>
     </div>
   );

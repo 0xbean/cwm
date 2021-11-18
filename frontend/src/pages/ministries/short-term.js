@@ -11,7 +11,6 @@ export default function ShortTermPage(props) {
   const { translation, mapContent, map, cmsUrl } = props;
 
   const upcomingTrips = mapContent.map((stm) => {
-    // 3 cases fr
     if (
       (stm.city && stm.country) ||
       stm.country ||
@@ -57,7 +56,7 @@ export default function ShortTermPage(props) {
 }
 
 export async function getServerSideProps(ctx) {
-  let url = `${process.env.CMS_URL}/short-term-missions`;
+  let url = `${process.env.API_URL}/short-term-missions`;
   if (ctx) {
     if (ctx.locale) {
       url += `?_locale=${ctx.locale}`;
