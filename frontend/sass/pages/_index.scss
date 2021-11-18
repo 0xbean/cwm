@@ -32,13 +32,16 @@
     @include respond(desktop) {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       flex-direction: row;
       margin: 5rem 0 5rem 0;
     }
 
     &-text {
-      margin: 5rem 10rem 5rem 10rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
     }
 
     &-imgs {

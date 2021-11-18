@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch';
 
 module.exports = {
   async getRequest(url) {
+    console.log(url);
     const data = await fetch(url, {
       method: 'GET',
       headers: {
